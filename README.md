@@ -7,4 +7,4 @@ https://packsunhye.github.io/coding/index.html
 https://packsunhye.github.io/coding/class/index.html   
 
 ### 자바스크립트 메인페이지
-https://packsunhye.github.io/coding/javascrip/index.html
+https://packsunhye.github.io/coding/javascript/index.html
