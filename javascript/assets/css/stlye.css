@@ -95,8 +95,48 @@ body{
 
 }
 .main_sample .result {
+    margin-bottom: 80px;
     
 }  
+
+/* 테이블 영역 */
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+
+.table tr th {
+    border:  1px solid #dedede;
+    padding: 10px;
+    font-weight: normal;
+    background-color: #dfe1eb;
+}
+.table tr td {
+    border:  1px solid #dedede;
+    padding: 10px;
+}
+
+.table .center {
+    text-align: center;
+}
+
+ /* 콘텐츠 영역 */
+#contents {
+    padding : 2vw;
+}
+#contents h2 {
+    margin-bottom: 10px;
+}
+
+#contents .numList .box {
+    background-color:  #ececec;
+    padding: 10px;
+    margin-bottom: 18px;        }
+    
 
 /* 미디어 영역 */
 @media (max-width : 800px){
