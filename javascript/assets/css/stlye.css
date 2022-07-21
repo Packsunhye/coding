@@ -114,7 +114,7 @@ body {
     font-size: 30px;
     line-height: 1.6;
     margin-bottom: 5px;
-    font-weight: 400;
+    font-weight: 500;
 }
 .document .t_tit2{
     font-size: 20px;
@@ -146,7 +146,7 @@ body {
     background-color: #f9f9f9;
 }
 .document .t_box{
-    padding: 10px 20px;
+    padding: 20px !important ;
     background-color: #f9f9f9;
     margin-bottom: 10px;
     color: #666;
@@ -163,6 +163,7 @@ body {
     background-color: #f9f9f9;
 }
 .document .t_table tr th,
+
 .document .t_table tr td{
     border: 1px solid #dcdcdc;
     font-weight: normal;
