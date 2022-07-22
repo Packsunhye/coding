@@ -1,17 +1,71 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Javasript&lt;/title&gt;
-    &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
-    &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
-    &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
-    &lt;script&gt;
-        document.write("Javasript");
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
-    &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //03. 
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x += 300;
+            y -= 400;
+            z += "jauery"
+            
+            document.write(x);      //400
+            document.write(y);      //-200  
+            document.write(z);      //javascriptjauery
+        }
+
+        //16
+        {
+            const obj = {
+                a : 100,
+                b : [200,300],
+                c : "javascript",
+                d : function(){
+                    document.write("javascript가 실행되었습니다.");
+                },
+                e : function(){
+                    document.write( obj.c + " 실행되었습니다.");
+                },
+                f : function(){
+                    document.write( this.c + " 실행되었습니다.");
+                }
+                
+            }
+
+            document.write(obj.a);          //100
+            document.write(obj.b);          //200,300   
+            document.write(obj.b[0]);       //200   
+            document.write(obj.b[1]);       //300
+            document.write(obj.c);          //javascript
+            obj.d();                        //javascript가 실행되었습니다.
+            obj.e();                        //javascript가 실행되었습니다.
+            obj.f();                        //javascript가 실행되었습니다.
+        }
+
+        //18 
+        {
+            const arr = [100,200,300,400,500];
+
+            for( let i=0; i<arr.length; i++){
+                document.write(arr[i]);         //100200300400500
+            }
+        }
+
+        //20
+        //변수는
+        //상수는
+        //배열은
+        //객체는
+        
+    </script>
+</body>
+</html>
