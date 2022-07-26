@@ -1,59 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    table {
-        width : 100%; 
-        border: 1px solid #000;
-    }
-    table td {
-        border:  1px solid #000;
-    }
-
-    .testTable tr td {
-        border:  1px solid #000;
-    }
-     
-</style>
-<body>
-
-    <!-- <table>
-        <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>10/td>
-        </tr>
-    </table> -->
-
-    <script>
-        //데이터 저장 + 변경 + 추가
-
-      
-        
-        let table = "<table>";
-
-            for( let i = 0; i < 10; i ++){
-                table += "<tr>"
-                    for(let j = 0; j < 10; j++){
-                        table += "<td>♬</td>"
-                    }
-                table += "</tr>"       
-            }
-            table += "</table>";
-
-        document.querySelector(".result01").innerHTML = table;
-    </script>
-</body>
-</html>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;return&lt;/title&gt;
+    &lt;script&gt;
+        function process() {
+            var kor = 100;
+            var eng = 90;
+            var avg = (kor + eng) / 2;
+            return avg;
+        }
+        close.log(process());
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
