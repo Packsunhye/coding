@@ -452,7 +452,16 @@
             border-radius: 50%;
         }
 
+        @media(max-height :700px){
+            main::before {
+                display: none
+            }
+        }
+
         @media(max-width : 800px){
+            main {
+                min-height: 700px;
+            }
             h1 {
                 font-size: 40px;
             }
@@ -526,9 +535,9 @@
         <nav>
             <ul>
                 <li><a href="javascript01.html">데이터를 저장하기</a></li>
-                <li><a href="javascript02.html">데이터를 실행하기</a></li>
-                <li><a href="javascript03.html">데이터를 제어하기</a></li>
-                <li><a href="javascript04.html">데이터를 불러오기</a></li>
+                <li><a href="javascript02.html">데이터를 불러오기</a></li>
+                <li><a href="javascript03.html">데이터를 실행하기</a></li>
+                <li><a href="javascript04.html">데이터를 제어하기</a></li>
             </ul>
             <ul>
                 <li><a href="javascript05.html">문자열 객체</a></li>
