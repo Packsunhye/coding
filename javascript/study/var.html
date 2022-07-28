@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 지역변수/전역변수
+    </title>
+
+<link rel="stylesheet" href="../assets/css/stlye.css">
+<link rel="stylesheet" href="../assets/css/dracula.css">
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="datatype.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+        <h2 class="t_tit">지역변수 / 전역변수</h2>
+        <p class="t_box">
+            변수는 함수 블록{}을 기준으로 변수의 선언 위치에 따라 '전역 변수'와 '지역 변수'로 나눠집니다.<br>
+            <i>'전역 변수'는 함수 블록{} 밖이나 안에서 자유롭게 사용 가능하지만 '지역 변수'는 함수 블록{}내에서만 사용</i>할 수 있습니다.
+         </p>
+
+        <h3 class="t_tit2">전역 변수와 지역 변수의 선언 위치</h3> 
+        <table class="t_table">
+            <thead>
+            <tr>
+                <th>지역 변수</th>
+                <th>전역변수</th>
+            </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                    <td>
+                    <pre><code>var 변수 ;
+function 함수(){ 
+}</code></pre>
+                    </td>
+                    <td>
+                    <pre><code>function 함수(){
+    var 변수;
+}</code></pre>
+                    </td>
+                 </tr>
+            </tbody>
+        </table><br>
+        <p class="t_desc">
+        아래 예시에서 함수 블록{}안에 있는 kor 변수는 전역변수이다. 따라서 getScore()함수를 호출하게 되면 변수 값이 90에서 100으로 바뀐다.</p>
+        <p class="t_box">
+            var kor = 90; <br>
+            function getScore(){ <br>
+             &nbsp; &nbsp; &nbsp; &nbsp;kor = 100; //전역변수 <br>
+             &nbsp; &nbsp; &nbsp; &nbsp;console.log(kor); //100 <br>
+            } <br> 
+            getScore(); <br> 
+            console.log(kor); //100
+        </p> 
+        <p class="t_desc">
+            아래 예시에서 함수 블록{}안에 있는 kor 변수를 var로 정의, 함수 블록{}안에서 var로 선언된 함수는 지역 변수가 되며 밖의 전역 변수 kor과 다른 별도의 변수가 된다. <br>
+            <i>함수 블록{}안에 지역 변수는 반드시 var로 선언해 줘야하며 함수 블록{} 밖에서 사용할 수 없다.</i></p>
+            <p class="t_box">
+                var kor = 90; <br>
+                function getScore(){ <br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;var kor = 100; //지역변수 <br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;console.log(kor); //100 <br>
+                } <br> 
+                getScore(); <br> 
+                console.log(kor); //100
+            </p><br>
+
+            <h4 class="t_tit3">블록에 의해 변수 범위가 달라지는 예시</h4>
+            <p class="t_desc">아래처럼 변수 범위가 달라지는 것을 <i>변수의 scope</i>라고 합니다. 전역 변수는 블록{}내외에서 사용 할 수 있기 때문레 자칫 동일한 이름으로 덫어질 수 있습니다. 
+            이런 이유로  전역 변수보다는 지역 변수가 안전하다.</p>
+            <p class="t_box">
+                function getScore(){ <br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;var kor = 100; //지역변수 <br>
+                 &nbsp; &nbsp; &nbsp; &nbsp;console.log(kor); //100 <br>
+                } <br> 
+                getScore(); <br> 
+                <i>console.log(kor); //에러</i>
+            </p><br>
+
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+
+
+ </body> 
+
+ </html>
+  
