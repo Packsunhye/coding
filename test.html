@@ -1,71 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>변수의 범위</title>
+    <script>
+        // 함수의 전역변수
+        var sum1 = 10;
+        function add1(){
+            sum1 = 20;
+        }
+        add1();
+        document.write('전역'+sum1);
+
+        //함수의 지역변수
+        var sum2 = 30;
+        function add2() {
+            var sum2 = 40;
+            document.write('지역'+sum2);
+        }
+        add2();
+        document.write('전역'+sum1);
+       
+        //함수의 지역변수
+        var sum2 = 30;
+        document.write('전역'+sum2);
+
+        //블록의 지역변수 
+        var num1 = 50;
+        if (num1 === 50){
+            var num1 = 60;
+        }
+        document.write('전역' + num1);
+        let num2 = 70;
+        if (num2 === 70){
+            let num2 = 80;
+            document.write('지역' + num2);
+        }
+        document.write('전역'+num2);
+    </script>
 </head>
 <body>
-    <script>
-        //03. 
-        {
-            let x = 100;
-            let y = 200;
-            let z = "javascript";
-
-            x += 300;
-            y -= 400;
-            z += "jauery"
-            
-            document.write(x);      //400
-            document.write(y);      //-200  
-            document.write(z);      //javascriptjauery
-        }
-
-        //16
-        {
-            const obj = {
-                a : 100,
-                b : [200,300],
-                c : "javascript",
-                d : function(){
-                    document.write("javascript가 실행되었습니다.");
-                },
-                e : function(){
-                    document.write( obj.c + " 실행되었습니다.");
-                },
-                f : function(){
-                    document.write( this.c + " 실행되었습니다.");
-                }
-                
-            }
-
-            document.write(obj.a);          //100
-            document.write(obj.b);          //200,300   
-            document.write(obj.b[0]);       //200   
-            document.write(obj.b[1]);       //300
-            document.write(obj.c);          //javascript
-            obj.d();                        //javascript가 실행되었습니다.
-            obj.e();                        //javascript가 실행되었습니다.
-            obj.f();                        //javascript가 실행되었습니다.
-        }
-
-        //18 
-        {
-            const arr = [100,200,300,400,500];
-
-            for( let i=0; i<arr.length; i++){
-                document.write(arr[i]);         //100200300400500
-            }
-        }
-
-        //20
-        //변수는
-        //상수는
-        //배열은
-        //객체는
-        
-    </script>
+    
 </body>
 </html>
