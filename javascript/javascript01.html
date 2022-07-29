@@ -153,27 +153,26 @@
                     지역변수는 함수 블록{} 내에서만 사용 할 수 있습니다.
                 </p>
                 <div class="script"></div>
- <pre><code>    let x = 100;                            //전역 변수
+ <pre><code>    let x = 100;                         //전역 변수
     let y = 200; 
 
-        function func(){
-            let x = 100;                    //지역변수
-            let z = "javascript";          //지역변수
-            x = 200;                        //지역변수 100 ---> 200
-            y = 300;                        //전역변수 200 ---> 300
+    function func(){
+        let x = 100;                    //지역변수
+        let z = "javascript";          //지역변수
+        x = 200;                        //지역변수 100 ---> 200
+        y = 300;                        //전역변수 200 ---> 300
 
-            document.write("함수 안");
-            document.write(x);
-            document.write(y);
-            document.write(z); 
-            } 
+        document.write("함수 안");
+        document.write(x);
+        document.write(y);
+        document.write(z); 
+    } 
 
     func();
     document.write("함수 밖");
     document.write(x);
     document.write(y);
-    document.write(z);
-        </code></pre>       
+    document.write(z); </code></pre>       
             <div  class="result">           
             <details>
                 <summary>결과보기</summary>
@@ -450,7 +449,7 @@
         b:[200,300],
         c:{x:400, y:500},
         d: "javascript"
-     }
+    }
 
     document.write(obj.a);
     document.write(obj.b[0]);
