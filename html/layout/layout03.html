@@ -49,17 +49,22 @@
 
                 <h3 class="t_tit2">float과 flex, grid 이용한 기본형 레이아웃</h3>
                 <p class="t_desc">
-                    float은 <i>'flotat: left;'</i> 과 <i>'flotat: left;'</i> 을 사용하며, flex는 부모 태그에 <i>display: flex;</i>를 붙여, <i>'flex-wrap'</i>를 사용한다. 
+                    float은 <i>'flotat: left;'</i>을 사용했을 때 깨진 부분에 <i>'clear: both;'</i> 나 부모 박스에 <i>'overflow: hidden'</i>를 사용하며, 
+                    flex는 부모 태그에 <i>display: flex;</i>를 붙여, <i>'flex-wrap'</i>를 사용한다. 
                     grid는 <i>'display: grid'</i>와 같이 부모 요소에 꼭 들어가야할 속성은 <i>grid-template-areas</i>
                     <i>grid-template-columns (가로 길이 지정), grid-template-rows(세로 길이 지정)</i>이다.
                     
                     자식 요소에는 각각 요소에 이름을 지정해주기 위한 <i>'grid-area'</i> 속성이 필요합니다.
+
+                    이번 float의 기본형과 반응형 에서는 <i>clearfix</i> 라는 가상요소를 줘 깨지는 걸 방지해줍니다.
                 </p>
                 <div class="t_iframe">
                     <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F5noe0qhFTMD5Pem2MX9YqH%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D66%253A97" allowfullscreen></iframe>
                </div>
 
                 <h3 class="t_tit2">float과 flex, grid 이용한 반응형 레이아웃</h3>
+                <p class="t_desc">반응형은 기본형에서 쓴 <i>px 수치들을 % 으로 바꾸어 작업</i>을 해줘야 합니다.</p><br>
+                
                 <h4 class="t_tit3">01. float 반응형 레이아웃</h4>
                 <div class="t_iframe">
                     <iframe height="300" style="width: 100%;" scrolling="no" title="float03_02" src="https://codepen.io/packsunhye/embed/poLrPRO?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
@@ -71,7 +76,7 @@
 
                 <h4 class="t_tit3">02. flex 반응형 레이아웃</h4>
                 <div class="t_iframe">
-                    <iframe height="300" style="width: 100%;" scrolling="no" title="flex03_02" src="https://codepen.io/packsunhye/embed/poLrPYB?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="flex03_02" src="https://codepen.io/packsunhye/embed/poLrPYB?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
                         See the Pen <a href="https://codepen.io/packsunhye/pen/poLrPYB">
                         flex03_02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
                         on <a href="https://codepen.io">CodePen</a>.
