@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+    <main id="main"> 
+        <div class="document">
+         <h2 class="t_tit"> 02. 퀴즈 유형 </h2>
+         <p class="t_desc">
+            퀴즈를 스크립트로 퀴즈 질문와 번호, 확인 버튼,결과를 도출해보았다. 이번에는 답을 주관식으로 적어 if문을 사용해 참인지 거짓인지 구별할 수 있다.</p>
+         <div class="script">
+            <div class="t_code">
+<pre><code class="language-js">     //선택자
+    const quizType = document.querySelector(".quiz_type");                              //퀴즈 종류
+    const quizNumber = document.querySelector(".quiz_question .number");     //퀴즈 번호
+    const quizAsk = document.querySelector(".quiz_question .ask");                  //퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz_answer .confirm");       //정답 확인 버튼
+    const quizResult = document.querySelector(".quiz_answer .result ");            //정답 결과
+    const quizInput = document.querySelector(".quiz_answer .input");              //사용자 정답
+    const quizView = document.querySelector(".quiz_view");                            //강아지
+    
+    //문제 정보
+    const answerType = "웹디자인기능사";
+    const answerNum = "2";
+    const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적,계획적으로 만들어내는 기업 이미지 통합 전략은 무엇입니까?";
+    let answerResult = "CIP";  
+
+    //문제 출력
+    quizType.textContent = answerType;
+    quizNumber.textContent = answerNum + ". ";
+    quizAsk.textContent = answerAsk;
+    quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
+
+    //정답 숨기기
+    quizResult.style.display = "none"
+    
+    //정답 확인
+    //정답 버튼을 클릭했을 때.
+    //정답이 맞는지 비교해야한다.
+    quizConfirm.addEventListener("click", () => {       //function을 화살표 함수로 줄였다.
+        quizInput.style.display = "none"
+        quizResult.style.display = "block"
+        quizConfirm.style.display = "none"
+      
+        //사용자 정답
+        const userWord = quizInput.value.toLowerCase().trim();      //소문자,여백
+        answerResult = answerResult.toLowerCase().trim();            //우변을 좌변으로 대입 (상수여서 변경x, 변수로 바꿔줌)
+
+        // console.log(userWord) 
+        // console.log(answerResult) 
+
+        //사용자 정답 == 문제 정답
+        if(userWord == answerResult){
+            //정답
+            quizView.classList.add("like");
+            //alert("정답입니다.")
+        } else {
+            //오답
+            quizView.classList.add("dislike");
+            //alert("오답입니다.")
+        }
+    });
+</code></pre> 
+            </div>
+        </div>
+        
+        <div class="t_iframe">
+            <iframe height="750px" style="width: 100%;" scrolling="no" title="quiz02" src="https://codepen.io/packsunhye/embed/eYMMeVj?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/packsunhye/pen/eYMMeVj">
+                quiz02</a> by Packsunhye (<a href="https://codepen.io/packsunhye">@packsunhye</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+        </div>
+            
+        </div>
+    </main>
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>  
+</body>
+</html>
