@@ -66,7 +66,44 @@
             document.write(func());
         }
 
+        //
+        {
+            const arr = [1,2,3,4,5,6,7,8,9];
 
+            //for문
+            for( i = 0; i < arr.length; i++ ){
+                document.write(arr[i]);
+            }
+
+            document.write("<br>");
+
+            //forEach문
+            arr.forEach(function(el){
+                document.write(el);
+            })
+
+            document.write("<br>");
+
+            //map()을 이용해서 하나씩 출력
+            arr.map(function(el){
+                document.write(el);
+            })
+            
+            document.write("<br>");
+
+            //for in 이용해서 하나씩 출력
+            for(let i in arr){
+                document.write(arr[i]);
+            }
+
+            document.write("<br>"); 
+
+            //for of 이용해서 하나씩 출력
+            for( let i of arr){
+                document.write(i);
+            }
+
+            }
     </script>
 </body>
 </html>
