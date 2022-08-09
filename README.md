@@ -24,6 +24,4 @@ https://packsunhye.github.io/coding/html/index.html <br>
 https://packsunhye.github.io/coding/html/alphabet.html
 
 ### site
-http://127.0.0.1:5500/site/cardType/cardType01.html <br>
-http://127.0.0.1:5500/site/cardType/cardType02.html
 
