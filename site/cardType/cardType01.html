@@ -74,6 +74,10 @@
         .card_body .tit {
             font-size: 24px;
             margin-bottom: 10px;
+            overflow: hidden; /* 한줄 효과 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
         }
         .card_body .desc {
             font-size: 18px;
@@ -81,6 +85,11 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
+            overflow: hidden; /* 2줄 이상 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
         }
         .card_body .btn {
         }
@@ -95,7 +104,7 @@
         <div class="card_inner container">
             <article class="card">
                 <figure class="card_header">
-                    <img src="../cardType/img/card_bg01.jpg" alt="고양이가 가만히 있을 때">
+                    <img src="../cardType/img/card_bg01_01.jpg" alt="고양이가 가만히 있을 때">
                 </figure>
                 <div class="card_body">
                     <h3 class="tit">고양이가 가만히 있을 때</h3>
@@ -113,7 +122,7 @@
             </article>
             <article class="card">
                 <figure class="card_header">
-                    <img src="../cardType/img/card_bg02.jpg" alt="고양이가 자고 있을 때">
+                    <img src="../cardType/img/card_bg01_02.jpg" alt="고양이가 자고 있을 때">
                 </figure>
                 <div class="card_body">
                     <h3 class="tit">고양이가 자고 있을 때</h3>
@@ -131,7 +140,7 @@
             </article>
             <article class="card">
                 <figure class="card_header">
-                    <img src="../cardType/img/card_bg03.jpg" alt="고양이 사진이 너무 잘찍혔을 때">
+                    <img src="../cardType/img/card_bg01_03.jpg" alt="고양이 사진이 너무 잘찍혔을 때">
                 </figure>
                 <div class="card_body">
                     <h3 class="tit">고양이 사진이 잘 찍혔을 때</h3>
