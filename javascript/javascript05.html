@@ -55,16 +55,16 @@
     <main id="main">
         <div class="main_menu">
             <ul>
-                <li><a href="#sample01">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample02">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample03">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample04">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample05">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample06">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample07">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample08">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample09">01.문자열 결합 / 템플릿 문자열</a></li>
-                <li><a href="#sample10">01.문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample01">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample02">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample03">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample04">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample05">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample06">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample07">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample08">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample09">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample10">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
             </ul>
         </div>
     <!-- /main_menu -->
@@ -72,8 +72,8 @@
 
             <!-- 1번 -->
             <div id="sample01" class="sample"> 
-                <h3>01. 변수 : 데이터 저장하기</h3>
-                <P>설명</P>
+                <h3>01. 문자열 : 문자열 결합 / 템플릿 문자열</h3>
+                <P>간단하게 말해 내장된 표현식을 허용하는 문자열 리터럴이다. </P>
                 <div class="table">
                     <table>
                         <colgroup>
@@ -119,7 +119,41 @@
                     </table>
                 </div>
                 <div class="script"></div>
-    <pre><code>    
+    <pre><code>        //01
+        const str1 = "자바스크립트"
+        const str2 = "제이쿼리"
+
+        document.querySelector(".sample01_N1").innerHTML = "1";
+        document.querySelector(".sample01_Q1").innerHTML = "자바스크립트, 제이쿼리";
+        document.querySelector(".sample01_M1").innerHTML = "문자열(string) 결합";
+        document.querySelector(".sample01_P1").innerHTML = str1+str2;
+
+        const num1 = 100;
+        const num2 = 200;
+        
+        //02
+        document.querySelector(".sample01_N2").innerHTML = "2";
+        document.querySelector(".sample01_Q2").innerHTML = "100,200";
+        document.querySelector(".sample01_M2").innerHTML = "숫자(number) 결합";
+        document.querySelector(".sample01_P2").innerHTML = num1+num2;
+
+        const text1 = "모던"
+        const text2 = "자바스크립트"
+        const text3 = "핵심"
+
+        //나는 모던(modern) 자바스크립트(javascript) 핵심을 배우고 싶다.
+        
+        //03
+        document.querySelector(".sample01_N3").innerHTML = "3";
+        document.querySelector(".sample01_Q3").innerHTML = "모던,자바스크립트,핵심";
+        document.querySelector(".sample01_M3").innerHTML = "문자열(string) 결합";
+        document.querySelector(".sample01_P3").innerHTML = "나는 " + text1 + "(modern) " + text2 + "(javascript) " + text3 + "을 배우고 싶다.";
+
+        //04
+        document.querySelector(".sample01_N4").innerHTML = "4";
+        document.querySelector(".sample01_Q4").innerHTML = "모던,자바스크립트,핵심";
+        document.querySelector(".sample01_M4").innerHTML = "탬플릿 문자열";
+        document.querySelector(".sample01_P4").innerHTML = `나는 ${text1}(modern) ${text2}(javascript) ${text3}을 배우고 싶다.`;
 
     </code></pre>   
             </div>   
@@ -186,7 +220,7 @@
                 
                 
         </div>        
-    </main>
+        </main>
     <!-- //main -->
 
     <footer id="footer">
@@ -219,6 +253,21 @@
         document.querySelector(".sample01_M2").innerHTML = "숫자(number) 결합";
         document.querySelector(".sample01_P2").innerHTML = num1+num2;
 
+        const text1 = "모던"
+        const text2 = "자바스크립트"
+        const text3 = "핵심"
+
+        //나는 모던(modern) 자바스크립트(javascript) 핵심을 배우고 싶다.
+        
+        document.querySelector(".sample01_N3").innerHTML = "3";
+        document.querySelector(".sample01_Q3").innerHTML = "모던,자바스크립트,핵심";
+        document.querySelector(".sample01_M3").innerHTML = "문자열(string) 결합";
+        document.querySelector(".sample01_P3").innerHTML = "나는 " + text1 + "(modern) " + text2 + "(javascript) " + text3 + "을 배우고 싶다.";
+
+        document.querySelector(".sample01_N4").innerHTML = "4";
+        document.querySelector(".sample01_Q4").innerHTML = "모던,자바스크립트,핵심";
+        document.querySelector(".sample01_M4").innerHTML = "탬플릿 문자열";
+        document.querySelector(".sample01_P4").innerHTML = `나는 ${text1}(modern) ${text2}(javascript) ${text3}을 배우고 싶다.`;
 
        }
     </script>
