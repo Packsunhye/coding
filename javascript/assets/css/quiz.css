@@ -284,7 +284,28 @@
 
         .quiz_selects label input:checked + span::before {
             box-shadow: inset 0px 0px 0px 10px #b781e9;
-        }   
+        }
+        
+        .quiz_confirm {
+            width: 100%;
+            text-align: center;
+        }
+        .quiz_confirm .check {
+            font-size: 22px;
+            line-height: 1.3;
+            padding: 13px 60px;
+            border: 6px ridge #cacaca;
+            box-sizing: border-box;
+            text-align: center; 
+            font-family: "TwayAir";
+            cursor: pointer;
+            margin: 40px 0;
+            transition: background 0.3s;
+        }
+
+        .quiz_confirm .check:hover {
+            background: #b080fd;
+        }
 
         @keyframes wobble {
             0% {transform: translateX(0) rotate(0deg);}
