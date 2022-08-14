@@ -1,53 +1,57 @@
-&lt;section id="cardType03" class="card_wrap score section"&gt;
-    &lt;h2 class="blind"&gt;바다의 세계&lt;/h2&gt; &lt;!--안보이게 처리--&gt;
-   &lt;div class="card_inner container"&gt;
-    &lt;article class="card"&gt;
-        &lt;figure class="card_header"&gt;
-            &lt;img src="img/card_bg03_01.jpg" alt="Click"&gt;
-            &lt;figcaption&gt;Click&lt;/figcaption&gt;
-        &lt;/figure&gt;
-        &lt;div class="card_contents"&gt;
-            &lt;h3&gt;이 바다처럼 우리 교실도 &lt;br&gt;
-                침수되고 있다 너무너무 웃겨&lt;/h3&gt;
-            &lt;p&gt;네네.. 우리 교실 물떨어져요 네.. 진짜 웃겨요 우리층 6층인데 빗물떨어져요 
-                우산써야할지 모르겠어요 두명은 컴퓨터도 꺼졌대요~ 비오는 날에 이래도 되는거임? 컴퓨터 학원도??&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card_footer"&gt;
-            &lt;h4&gt;Sunhye &lt;em&gt;6 Resources&lt;/em&gt;&lt;/h4&gt;
-            &lt;span&gt;&lt;img src="img/card_bg03_04.png" alt="cat"&gt;&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/article&gt;
-    &lt;article class="card"&gt;
-        &lt;figure class="card_header"&gt;
-            &lt;img src="img/card_bg03_02.jpg" alt="Click"&gt;
-            &lt;figcaption&gt;Click&lt;/figcaption&gt;
-        &lt;/figure&gt;
-        &lt;div class="card_contents"&gt;
-            &lt;h3&gt; 노을진 바다가 이쁘면서  &lt;br&gt;
-                역시 바캉스는 집에서 쉬어야지&lt;/h3&gt;
-            &lt;p&gt; 바다에 가고싶다.. BUT ! ! 집에 있는게 짱이야.. , 그러나 ! ! 튜브도 타고 싶다.. 하우웨버 ! ! 
-                집에도 에어컨이 있어... 네버어쩌구 ! ! 짠물기운이 좋다.,. 물론 마시면 퉤퉤퉤&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card_footer"&gt;
-            &lt;h4&gt;Manyong &lt;em&gt;6 Resources&lt;/em&gt;&lt;/h4&gt;
-            &lt;span&gt;&lt;img src="img/card_bg03_05.png" alt="cat"&gt;&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/article&gt;
-    &lt;article class="card"&gt;
-        &lt;figure class="card_header"&gt;
-            &lt;img src="img/card_bg03_03.jpg" alt="Click"&gt;
-            &lt;figcaption&gt;Click&lt;/figcaption&gt;
-        &lt;/figure&gt;
-        &lt;div class="card_contents"&gt;
-            &lt;h3&gt;파도가 넘쳐 흐르면서 &lt;br&gt;
-                비가 새는건 딴 곳인 우리 학원&lt;/h3&gt;
-            &lt;p&gt;부셔진 벽은 딴 곳이면서 우째서 천장에서 물이 떨어지는 걸까 건물의 신기함 
-                헉 그럼 사이는 이미 빗물이 가득한걸까? 걸레로 빡빡 닦아야만 .... 물론 다음날 멀쩡해졌다 ! ! !&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="card_footer"&gt;
-            &lt;h4&gt;LaLayong &lt;em&gt;12 Resources&lt;/em&gt;&lt;/h4&gt;
-            &lt;span&gt;&lt;img src="img/card_bg03_06.png" alt="cat"&gt;&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/article&gt;
-   &lt;/div&gt;
-&lt;/section&gt;
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장 함수</title>
+    <script>
+        //인코딩, 디코딩 함수
+        {
+            // var encodeStr = '자바스크립트';
+            // console.log(encodeURIComponent(encodeStr));
+            // var decodeStr = encodeURIComponent(encodeStr);
+            // console.log(decodeURIComponent(decodeStr));
+        }
+        //숫자, 유한무한 값 판별 함수
+        {
+            var num1 = '숫자';
+            if (!isNaN(num1)){
+                console.log('숫자');
+            }else {
+                console.log('숫자아님');
+            }
+
+            var num2 = 1 / 0;
+            if(isFinite(num2)){
+                console.log('유한값');
+            }else {
+                console.log('무한값');
+            }
+        }
+        //숫자 ,문자 변환 함수
+        {
+            var num3 = '10';
+            console.log(Number(num3));
+            var num4 = '100px';
+            console.log(parseInt(num4));
+            var num5 = '33.3%';
+            console.log(parseFloat(num5));
+            var num6 = 10;
+            console.log(typeof num6);
+            console.log(typeof String(num6));
+        }
+        //자바스크립트 코드 변경 함수
+        {
+            var str1 = 'var num7 = 10'
+            var str2 = 'var num8 = 20'
+            eval(str1);
+            eval(str2);
+            console.log(num7 +num8);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

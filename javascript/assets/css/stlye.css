@@ -148,7 +148,7 @@ body {
 }
 .document i::before {
     content: '';
-    background-color: #0242f136;
+    background-color: #6b2cfd36;
     width: 100%;
     height: 10px;
     position: absolute;
@@ -193,7 +193,7 @@ body {
     color: #666;
     margin-bottom: 10px !important;
     padding: 15px 20px !important;
-    border-left: 4px solid #0243f1;
+    border-left: 4px solid #6d30fa;
     background-color: #f9f9f9;
 }
 .document .t_box{
