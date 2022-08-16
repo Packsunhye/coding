@@ -15,6 +15,8 @@ https://packsunhye.github.io/coding/javascript/effect/quizEffect02.html <br>
 https://packsunhye.github.io/coding/javascript/effect/quizEffect03.html <br>
 https://packsunhye.github.io/coding/javascript/effect/quizEffect04.html
 
+### 검색 이펙트
+https://packsunhye.github.io/coding/javascript/effect/searchEffect01.html
 
 ### 티스토리 페이지 
 https://sunhey.tistory.com/
