@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트06</title>
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/tway/TwayAir.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html"> Quiz </a> <em>객관식(여러문제) 확인하기 : 슬라이드 형식</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz_wrap">
+            <div class="quiz">
+                <span class="quiz_type"></span>
+                <h2 class="quiz_question">
+                    <!-- <span class="number"></span>
+                    <div class="ask"></div> -->
+                </h2>
+                <div class="quiz_view">
+                    <div class="true">정답입니다.</div>
+                    <div class="false">틀렸습니다.</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz_answer">
+                   <div class="quiz_selects">
+                    <!-- <label for="select1">
+                        <input type="radio" id="select1" class = "select" name="select" value="1">
+                        <span class="choice"></span>
+                    </label>
+                    <label for="select2">
+                        <input type="radio" id="select2" class = "select" name="select" value="2">
+                        <span class="choice"></span>
+                    </label>
+                    <label for="select3">
+                        <input type="radio" id="select3" class = "select" name="select" value="3">
+                        <span class="choice"></span>
+                    </label>
+                    <label for="select4">
+                        <input type="radio" id="select4" class = "select" name="select" value="4">
+                        <span class="choice"></span>
+                    </label> -->
+                   </div>
+
+
+                   <button class="confirm"> 다음 문제 </button>
+                    <div class="result"></div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+    //문제 정보
+
+    const quizInfo = [
+            { //01
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "1. ",
+                answerAsk : "저드(D.Judd)의 색채 조화의 원리에 해당하지 않는 것은?",
+                answerChoice : [
+                    "질서의 원리",
+                    "유사의 원리",
+                    "친근감의 원리",
+                    "연속성의 원리"
+                ],
+                answerResult : "연속성의 원리" ,
+                answerEx : "저드는 색채 조화 원리에서 질서의 원리,유사의 원리,친근감의 원리,명료성의 원리를 주장했습니다." 
+            },
+            { //02
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "2. ",
+                answerAsk : "율동(rhythm)의 요소로 볼 수 없는 것은?",
+                answerChoice : [
+                    "점증",
+                    "반복",
+                    "변칙",
+                    "대칭"
+                ],
+                answerResult : "대칭" ,
+                answerEx : "대칭은 균형의 요소입니다"
+            },
+            { //03
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "3. ",
+                answerAsk : "디자인 조건 중 최소의 재료에 의해 최대의 효과를 얻고자하는 인간의 활동과 가장 밀접한 관계가 있는 것은?",
+                answerChoice : [
+                    "심미성",
+                    "질서성",
+                    "경제성",
+                    "독창성"
+                ],
+                answerResult : "경제성" ,
+                answerEx : "최소의 재료로 최대의 효과를 얻기 위한 것은 경제적인 요소와 관계있으므로 경제성입니다."
+            },
+            { //04
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "4. ",
+                answerAsk : "책을 열심히 보다가 시선을 돌리면 검정색 활자가 흰색 활자로 나타나는 현상은?",
+                answerChoice : [
+                    "부의 잔상",
+                    "정의 잔상",
+                    "동화 현상",
+                    "매스 효과"
+                ],
+                answerResult : "부의 잔상" ,
+                answerEx : "원래의 색과 반대로 보이는 잔상이 생기는 것 입니다."
+            },
+            { //05
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "5. ",
+                answerAsk : "지역 간 또는 국가 간과 같이 지리적으로 완전하게 떨어진곳을 연결하는 통신망은?",
+                answerChoice : [
+                    "VAN",
+                    "WAN",
+                    "MAN",
+                    "LAN"
+                ],
+                answerResult : "WAN" ,
+                answerEx : "VAN는 기간통신사업자로부터 회선을 임대/임차하여 고품질의 정보서비스를 제공하는 통신망이며, MAN은 도시와 도시를 연결하는 통신망으로 도시권정보통신망,LAN은 가까운 거리 및 제한된 지역 및 건물 등의 통신망입니다."
+            },
+            { //06
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "6. ",
+                answerAsk : "OSI 7 계층 중 프로세스 간의 대화 제어 및 동기점을 이용한 효율적인 데이터 복구를 제공하는 계층은?",
+                answerChoice : [
+                    "세션 계층",
+                    "네트워크 계층",
+                    "물리 계층",
+                    "전송 계층"
+                ],
+                answerResult : "세션 계층" ,
+                answerEx : "네트워크 계층은 별개의 네트워크 간에 데이터 패킷을 주고 받음으로써 이러한 연결이 만들어지는 인터넷 통신 프로세스의 일부이며, 물리 계층은 컴퓨터 네트워킹의 OSI 7계층 모델에서 가장 낮은 첫 번째 계층이고, 전송 계층은 계층 구조의 네트워크 구성요소와 프로토콜 내에서 송신자와 수신자를 연결하는 통신 서비스를 제공을 뜻합니다."
+            },
+            { //07
+                answerType : "웹 디자인 기능사 2014년 5회",
+                answerNum : "7. ",
+                answerAsk : "다음 중 LAN의 물리적 통신망 구조가 아닌 것은?",
+                answerChoice : [
+                    "성(star)형",
+                    "버스(bus)형",
+                    "십자(cross)형",
+                    "링(ring)형"
+                ],
+                answerResult : "십자(cross)형" ,
+                answerEx : "LAN의 물리적 구조 : 스타형, 버스형, 링형 등등이 있습니다."
+            },
+    ];
+
+    const quizQuestion = document.querySelector(".quiz_question")           //문제 번호와 질문 
+    const quizSelects = document.querySelector(".quiz_selects")             //객관식 보기
+    const quizType = document.querySelector(".quiz_type")                   //문제타입
+    const quizResult = document.querySelector(".quiz_answer .result")       //해설
+    const quizConfirm = document.querySelector(".quiz_answer .confirm")     //정답확인버튼
+    const quizView = document.querySelector(".quiz_view")     // 강아지
+
+    
+    let quizCount = 0;
+    let quizScore = "";
+
+    //문제 출력
+    const updateQuiz = (index) => {
+        // const typeTag = `<span class="quiz_type">${quizInfo[0].answerType}</span>`
+
+        const questionTag = `
+            <span class="number">${quizInfo[index].answerNum}</span>
+            <div class="ask">${quizInfo[index].answerAsk}</div>`
+
+        const choiceTag  = `
+            <label for="select1">
+                <input type="radio" id="select1" class = "select" name="select" value="1">
+                <span class="choice">${quizInfo[index].answerChoice[0]}</span>
+            </label>
+            <label for="select2">
+                <input type="radio" id="select2" class = "select" name="select" value="2">
+                <span class="choice">${quizInfo[index].answerChoice[1]}</span>
+            </label>
+            <label for="select3">
+                <input type="radio" id="select3" class = "select" name="select" value="3">
+                <span class="choice">${quizInfo[index].answerChoice[2]}</span>
+            </label>
+            <label for="select4">
+                <input type="radio" id="select4" class = "select" name="select" value="4">
+                <span class="choice">${quizInfo[index].answerChoice[3]}</span>
+            </label> `
+
+        //문제 출력
+        quizQuestion.innerHTML = questionTag;  
+        quizSelects.innerHTML = choiceTag;  
+        // document.querySelector(".quiz_type").innerHTML = ${quizInfo[0].answerType}
+        quizType.innerHTML = quizInfo[index].answerType 
+        quizResult.innerHTML = quizInfo[index].answerEx 
+        
+        const quizChoice = quizSelects.querySelectorAll(".choice");
+
+        for(let i=0; i<quizChoice.length; i++){
+            quizChoice[i].setAttribute("onclick" , "choiceSelected(this)")
+        }
+
+        // 문제, 해설 숨기기
+        quizResult.style.display = "none";
+        quizConfirm.style.display = "none";
+
+    }
+    updateQuiz(quizCount);
+
+    const choiceSelected = (answer) => {
+        let userAnswer = answer.textContent;
+        let currentAnswer = quizInfo[quizCount].answerResult; 
+
+        if(userAnswer == currentAnswer){
+            console.log("정답")
+            quizView.classList.add("like")
+            quizScore++
+        }else {
+            console.log("오답")
+            quizView.classList.add("dislike")
+            quizResult.style.display = "block";
+        }
+        quizConfirm.style.display = "block";
+    }
+
+
+
+    //정답 확인 버튼
+    const answerQuiz = () => {
+        quizCount++
+        updateQuiz(quizCount);
+        quizView.classList.remove("like","dislike")
+
+        //마지막 문제
+        if(quizInfo.length -1 == quizCount ){
+            quizConfirm.textContent = `총 ${quizInfo.length}문제 중에 ${quizScore}문제를 맞췄습니다.`
+        }
+    }
+
+    quizConfirm.addEventListener("click",answerQuiz);
+
+
+
+    </script>
+</body>
+
+</html>

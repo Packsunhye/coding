@@ -307,6 +307,13 @@
             background: #b080fd;
         }
 
+        .quiz_confirm .ex {
+            font-family: "DungGeunMo";
+            font-size: 28px;
+            font-weight: 500;
+            
+        }
+
         @keyframes wobble {
             0% {transform: translateX(0) rotate(0deg);}
             15% {transform: translateX(-25%) rotate(-5deg);}
