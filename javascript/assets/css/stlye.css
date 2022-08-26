@@ -1,18 +1,18 @@
 /* 웹폰트 */
-@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/nixgon/NixgonFonts.css');
 /* 리셋 */
 /* 여백 초기화 */
 *{
     margin: 0;
     padding: 0;
-    font-family: 'NexonLv1Gothic';
+    font-family: 'NixgonFonts';
     font-size: 16px;
     line-height: 1.6;
 }
 /* 링크 초기화 */
 a {
     text-decoration: none;
-    color: #222;
+    color: #3f339b;
 }
 /* 목록 초기화 */
 li {
@@ -26,9 +26,17 @@ h1, h2, h3, h4, h5, h6{
 body {
     padding: 40px;
 }
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 #header{
     border-bottom: 1px dashed #dcdcdc;
     padding-bottom: 40px;
+    text-align: center;
 }
 #main{
     padding: 40px 0;
@@ -45,22 +53,23 @@ body {
 #header h1 a{
     font-size: 60px;
     font-weight: 700;
+    color: #8174e7;
 }
 .header_nav ul li{
     display:inline;
 }
 .header_nav ul li.active a{
-    background-color: #000;
+    background-color: #8174e7;
     color: #fff;
 }
 .header_nav ul li a{
-    border: 1px solid #222;
+    border: 1px solid #8174e7;;
     padding: 8px 25px;
     display: inline-block;
     margin-bottom: 7px;
 }
 .header_nav ul li a:hover{
-    background-color: #000;
+    background-color: #8174e7;
     color:#fff;
 }
 .header_nav .study {
@@ -79,6 +88,11 @@ body {
     border-radius: 40px;
 }
 
+/* main_menu */
+.main_menu a {
+    color: rgb(78, 78, 78);
+}
+
 /* 메인 샘플 */
 .main_sample{
     margin-top: 40px;
@@ -94,9 +108,50 @@ body {
     color: #666;
 }
 .main_sample .result{
+    margin-top: 10px;
     margin-bottom: 80px;
+    background-color: rgb(228, 216, 245);
+    padding: 10px;
+    border-radius: 5px;
+
 }
 
+/* intro_menu */
+.intro_menu {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(10px);
+    background-color: rgba(180, 138, 247, 0.363);
+    padding: 3vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: left;
+    color: #282442;
+}
+.intro_menu li a {
+    color: rgb(56, 51, 63);
+}
+
+@media(max-width : 600px){
+    .intro_menu {
+        width: 90%;
+        padding: 14px;
+    }
+    .intro_menu li{
+        font-size: 16px;
+    }
+    .intro_menu li{
+        font-size: 16px;
+    }
+
+    .intro_menu li a{
+        font-size: 16px;
+    }
+
+}
+    
 /* sample */
 .sample {
     margin-bottom : 80px;
