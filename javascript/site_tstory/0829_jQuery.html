@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0829 </title>
+    <link rel="stylesheet" href="../assets/css/stlye.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+<body>
+   
+    <main id="main">
+        <div class="document">
+            
+            <h2 class="t_tit"> jQuery 개념 정리 </h2>
+            <p class="t_desc"> 제이쿼리(jQuery)는 오픈 소스 기반의 자바스크립트 라이브러리입니다. </p>
+
+            <h3 class="t_tit2"> 01. 사용법 </h3>
+            <p class="t_desc"> 기존의 style이나 js 링크처럼 GSAP에서 script 링크를 가져와, 선택자등을 쉽게 가져올 수 있게 만들어줍니다. </p>
+          
+            <h3 class="t_tit2"> 02. 자바스크립트와 jQuery의 비교 </h3>
+            <div class="t_code">
+                <pre><code class="language-js">//javascript
+const sliderInner = document.querySelector(".보여지는_곳")
+const slider = document.querySelectorAll(".이미지")
+
+let currentIndex = 0;  
+
+sliderInner.style.transition = "all 0.8s"
+
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % slider.length;
+
+    sliderInner.style.transform = "translateX(" + -800 * currentIndex + "px)"
+},1500) </code></pre><br>
+<div class="t_code">
+    <pre><code class="language-js">//jQuery
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+let currentIndex = 0;
+        
+setInterval(()=>{
+    currentIndex = (currentIndex + 1) % $(".slider").length;
+
+    $(".slider__inner").css("position","relative");
+    $(".slider__inner").animate({left : -800 * currentIndex},800);
+
+},1500) </code></pre><br>
+            <p class="t_desc"> 보이는 것과 같이 jQuery는 $(달러)표시를 사용해, 스크립트의 양도 줄이며 선택자를 설정할 수 있습니다. </p>
+
+        
+
+        </div>       
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
