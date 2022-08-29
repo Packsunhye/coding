@@ -31,7 +31,7 @@ body.img02 {
     background: url(../../../assets/silde/min_jelly/slide_bg_02@2x-min.jpg) no-repeat center / cover ;
 }
 body.img03 {
-    background: url(../../..assets/silde/min_jelly/slide_bg_03@2x-min.jpg) no-repeat center / cover ;
+    background: url(../../../assets/silde/min_jelly/slide_bg_03@2x-min.jpg) no-repeat center / cover ;
 }
 body.img04 {
     background: url(../../../assets/silde/min_jelly/slide_bg_04@2x-min.jpg) no-repeat center / cover ;
@@ -64,7 +64,7 @@ body::after {
     width: 100%;
     height: 100vh;
     z-index: -1;
-    background: rgba(49, 31, 58, 0.801);
+    background:rgb(59 56 114 / 50%);
 }
 
 img {
@@ -74,6 +74,19 @@ img {
 a {
     color: #fff;
     text-decoration: none;
+}
+
+/* layout */
+#header {
+    z-index: 2000;
+}
+#main {
+    position: relative;
+    z-index: 1000;
+}
+#footer {
+    position: relative;
+    z-index: 3000;
 }
 
 /* header */
@@ -158,7 +171,7 @@ a {
 
     width: 100%;
     height: 100vh;
-    background-color:rgba(145, 124, 185, 0.521);
+    background-color:rgba(126, 104, 179, 0.452);
     position: fixed;
     left: 0;
     top: 0;
@@ -419,7 +432,7 @@ a {
     }
 }
 
-@media (max-width : 600px){
+@media (max-width : 800px){
     #header {
         width: 100%;
         text-align: center;
