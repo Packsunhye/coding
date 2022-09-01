@@ -183,6 +183,85 @@ body {
     cursor: help;
  }
 
+ .sample .table.left tr td {
+    text-align: left;
+ }
+ .sample .table.left .ce {
+    text-align: center;
+ }
+
+ .sample .View {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+ }
+
+.sample .blue {
+    background-color: #d0c7ff;
+    padding: 15px;
+    border-radius: 5px 5px 0 0 ;
+    margin-bottom: 0;
+    color: #806fdf !important;
+    font-weight: 700;
+}
+
+ .sample .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #afa2fa;
+    border-radius: 1px solid #7243e1;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    text-align: center;
+    color: #5a4caa;
+}
+.sample .sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #7243e1;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #7243e1;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sample .sResult {
+    text-align: center;
+    color: #5a4caa !important;
+    padding-top: 10px;                    
+}
+.sample .button {
+    border: 1px solid rgb(176, 176, 224);
+    border-top: 0;
+    padding: 20px;
+    text-align: center;
+}
+.sample .button a {
+    border: 1px solid #afa2fa;
+    color: #000;
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5px;
+    color: #5a4caa;
+
+}
+.sample .button a:hover {
+    background-color: #9f90f7;
+    color: #fff;
+}
+
  @media (max-width: 800px){
     .sample .table {
         overflow-x: scroll;  /* 800보다 작아졌을때 x축으로 스크롤이 생김*/
