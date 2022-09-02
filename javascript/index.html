@@ -29,7 +29,7 @@
             font-family: "GmarketSans";
             text-align: center;
             padding: 2vw;
-            border: 8px solid #0243F1;
+            border: 8px solid #8c67d6;
             box-sizing: border-box;
             border-radius: 20px;
             position: relative;
@@ -37,7 +37,7 @@
 
         main::before {
             content: "";
-            border: 8px solid #50B5F9;
+            border: 8px solid #c5aafc;
             position: absolute;
             left: 0;
             top: 0;
@@ -49,7 +49,7 @@
 
         h1 {
             font-size: 8vw;
-            color: #0243F1;
+            color: #a57ef1;
             margin-bottom: 4vw;
             text-transform: capitalize;
             /*앞글자 대문자*/
@@ -62,9 +62,9 @@
 
         nav ul li a {
             text-decoration: none;
-            border: 1px dashed #0243F1;
+            border: 1px dashed #8c67d6;
             padding: 10px 24px;
-            color: #0243F1;
+            color: #a57ef1;
             display: inline-block;
             margin: 6px 3px;
             border-radius: 50px;
@@ -73,17 +73,51 @@
         }
 
         nav ul li a:hover {
-            background-color: #0243F1;
+            background-color: #8c67d6;
             color: #fff;
         }
 
+        .link {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            z-index: 10000;
+
+        }
+        .link li {
+            list-style: none;
+            display: inline;
+        }
+        .link li a {
+            font-family: "GmarketSans";
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #8c67d6;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding-top: 3px;
+            transition: all 0.3s;
+
+            background: #aa87f0;
+            color: #fff;
+
+        }
+        .link li a:hover {
+            background: #fff;
+            color: #8c67d6;
+        }
         /* dog */
         .dog .wrap {
             width: 300px;
             height: 300px;
-            background: #0066ff;
+            background: #c5aafc;
             position: relative;
-            box-shadow: 0 -10px 0 0 #0057d9;
+            box-shadow: 0 -10px 0 0 #b28cff;
             border-radius: 50%;
         }
 
@@ -186,7 +220,7 @@
             position: absolute;
             width: 3px;
             height: 15px;
-            background: #010101;
+            background: #ffffff;
             bottom: 0;
             left: 12.5px;
             border-radius: 50px 50px 0 0;
@@ -217,7 +251,7 @@
 
         .dog .body .head .inner .spot {
             position: absolute;
-            background: #252510;
+            background: #ffffff;
             width: 100px;
             height: 110px;
             border-radius: 100%;
@@ -229,10 +263,10 @@
         .dog .body .head .ear {
             position: absolute;
             width: 65px;
-            height: 100px;
-            background: #131308;
-            box-shadow: inset -5px 0 0 15px #252510;
-            top: -50px;
+            height: 130px;
+            background: rgb(240, 201, 201);
+            box-shadow: inset -5px 0 0 15px #ffffff;
+            top: -75px;
             z-index: -5;
             left: -10px;
             transform-style: preserve-3d;
@@ -246,7 +280,7 @@
             position: absolute;
             width: 50px;
             height: 55px;
-            background: #252510;
+            background: #ffffff;
             z-index: -1;
             transform: translateZ(-3px) rotate(-20deg);
             border-radius: 0 0 100% 100%;
@@ -256,9 +290,9 @@
 
         .dog .body .head .ear.right {
             left: auto;
-            right: -10px;
+            right: -3px;
             border-radius: 300px 100px 150px 50px/600px 100px 350px 50px;
-            background: #cccccc;
+            background: rgb(240, 201, 201);
             box-shadow: inset 5px 0 0 15px #fff;
             transform-origin: 0% 100%;
         }
@@ -424,10 +458,10 @@
             width: 30px;
             height: 25px;
             position: absolute;
-            background: black;
+            background: rgb(245, 160, 160);
             left: calc(50% - 15px);
             bottom: 30px;
-            border-radius: 10px;
+            border-radius: 30px;
         }
 
         .dog .body .head .snout .nose:before {
@@ -475,6 +509,14 @@
 
 <body>
     <main>
+        <div class="link">
+            <ul>
+                <li><a href="https://sunhey.tistory.com/" target="_blank">t</a></li> 
+                <li><a href="https://github.com/Packsunhye/coding" target="_blank">g</a></li>
+                <li><a href="https://github1s.com/Packsunhye/coding" target="_blank">v</a></li>
+            </ul>
+        </div>
+
         <div class="dog">
             <div class="wrap">
                 <div class="body">

@@ -745,6 +745,7 @@ searchKeyword.forEach(el => {
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");      //알파벳
         const searchList = document.querySelectorAll(".search__list ul li")                 //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");                    //전체갯수
+        const searchInfo_sT = document.querySelector(".search__info .num");                    //전체갯수
 
         //갯수
         searchInfo.textContent = searchList.length;
@@ -766,6 +767,8 @@ searchKeyword.forEach(el => {
                         el.classList.add("hide");
                     }
                 });
+                const hidingNum = document.querySelectorAll(".search__list ul li.hide");
+                searchInfo_sT.textContent = searchList.length - hidingNum.length;
             });
         });
         
