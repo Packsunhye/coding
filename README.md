@@ -3,6 +3,9 @@
 ### 메인 페이지
 https://packsunhye.github.io/coding/index.html   
 
+### 네트리파이
+https://manyong.netlify.app/
+
 ### 자기소개 페이지
 https://packsunhye.github.io/coding/class/index.html   
 
