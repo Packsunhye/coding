@@ -71,6 +71,12 @@
         
         user-select: none;  /* 포인터로 선택할 수 없게 만듬 */
         pointer-events: none;
+        transition: 
+        background-color 0.3s,
+        border-color 0.3s,
+        transform 0.6s,
+        rotate 0.3s,
+        border-radius 0.3s ;
       }
 
       .mouse__cursor.style1 {
@@ -81,26 +87,31 @@
       .mouse__cursor.style2 {
         background-color: rgba(68, 56, 180, 0.247);
         border-color: rgb(68, 56, 180);
+        transform: scale(2) rotateX(720deg);
       }
 
       .mouse__cursor.style3 {
         background-color: rgba(252, 217, 60, 0.219);
         border-color: rgb(252, 217, 60);
+        transform: scale(1.5) rotateY(350deg);
       }
 
       .mouse__cursor.style4 {
         background-color: rgba(94, 201, 250, 0.178);
         border-color: rgb(94, 201, 250);
+        transform: scale(3) rotateX(720deg);
       }
 
       .mouse__cursor.style5 {
         background-color: rgba(104, 241, 111, 0.192);
         border-color: rgb(104, 241, 111);
+        transform: scale(2) rotate(720deg);
       }
 
       .mouse__cursor.style6 {
         background-color: rgba(60, 105, 252, 0.171);
         border-color: rgb(60, 105, 252);
+        border-radius: 0;
       }
 
       .mouse__info {
@@ -132,12 +143,12 @@
         <li><a href="mouseEffect07.html">7</a></li>
       </ul>
     </header>
-
+    
     <main id="main">
       <section id="mouseType">
         <div class="mouse__cursor"></div>
         <div class="mouse__wrap">
-          <p class="Nix">Numbing the <span class="style1">pain</span> for a while will <span class="style2">make it</span> worse when you <span class="style3">finally feel it.</span> </p>
+          <p class="Nix">Numbing the <span class="style1">pain</span> for a while will <span class="style2">make it worse</span> when you <span class="style3">finally feel it.</span> </p>
           <p class="arir"><span class="style4">고통</span>을 잠시라도 <span class="style5">모른 척</span>하면, 나중에 정말 고통을 느낄 때 더 <span class="style6">악화되는 법</span>이란다.</p>
         </div>
       </section>
@@ -277,7 +288,6 @@
       // document.querySelector(".style1").addEventListener("mouseover", () => {
       //   cursor.classList.add("style1")
       // });
-
       // document.querySelector(".style1").addEventListener("mouseout", () => {
       //   cursor.classList.remove("style1")
       // });
@@ -290,22 +300,37 @@
       // }
 
       //for Each() 문
-      num = [1,2,3,4,5,6]
+      // num = [1,2,3,4,5,6]
 
-      num.forEach(element => {
-        document.querySelector(".style" + element ).addEventListener("mouseover", () => {cursor.classList.add("style" + element)})
-        document.querySelector(".style" + element ).addEventListener("mouseout", () => {cursor.classList.remove("style" + element)})
-      });
+      // num.forEach(element => {
+      //   document.querySelector(".style" + element ).addEventListener("mouseover", () => {cursor.classList.add("style" + element)})
+      //   document.querySelector(".style" + element ).addEventListener("mouseout", () => {cursor.classList.remove("style" + element)})
+      // });
 
       //forEach 문
-      document.querySelectorAll(".mouse__wrap > p span").forEach((e,i)=>{
-          e.addEventListener("mouseover", ()=>{
-              cursor.classList.add("style"+(i+1));
-          })
-          e.addEventListener("mouseout", ()=>{
-              cursor.classList.remove("style"+(i+1));
-          })
-      })
+      // document.querySelectorAll(".mouse__wrap span").forEach((span, num)=>{
+      //     span.addEventListener("mouseover", ()=>{
+      //         cursor.classList.add("style"+(num + 1));
+      //     });
+      //     span.addEventListener("mouseout", ()=>{
+      //         cursor.classList.remove("style"+(num + 1));
+      //     });
+      // });
+
+      //getAttribute 
+      document.querySelectorAll(".mouse__wrap span").forEach((span)=>{
+        let attr = span.getAttribute("class")
+
+        span.addEventListener("mouseover", ()=>{
+            cursor.classList.add(attr);
+        });
+        span.addEventListener("mouseout", ()=>{
+            cursor.classList.remove(attr);
+        });
+        
+      });
+
+
     </script>
   </body>
 </html>

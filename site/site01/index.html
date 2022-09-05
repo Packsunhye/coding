@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="assets/css/imgType.css">
     <link rel="stylesheet" href="assets/css/textType.css">
     <link rel="stylesheet" href="assets/css/imgTextType.css">
+    <link rel="stylesheet" href="assets/css/bannerType.css">
+    <link rel="stylesheet" href="assets/css/footerType.css">
+    <link rel="stylesheet" href="assets/css/sliderType.css">
 
 
 </head>
@@ -61,8 +64,37 @@
     <!-- //hraderType -->
 
     <main id="mainType">
-        <section id="sliderType" class="slider__wrap">
-            <h2>슬라이드 영역</h2>
+        <section id="sliderType" class="slider__wrap nexon">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc">
+                            <span>DEVELOPER</span>
+                            <h3>CAT PROJECT</h3>
+                            <p>
+                                고양이들이 가득 있어요 구경해주세요!<br>
+                                여러 종과 여러 색상이 있답니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="rigth"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                </div>
+            </div>
         </section>    
         <!-- //sliderType -->
 
@@ -175,8 +207,15 @@
         </section>
         <!-- //cardType -->
 
-        <section id="bannerType" class="banner__wrap">
-            <h2>배너 영역</h2>
+        <section id="bannerType" class="banner__wrap nexon">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">고양이 사이트</h3>
+                <p class="desc">세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다. 
+                    <a href="#" title="고양이 보러가기">다들 고양이 자랑과 이미지 보고 가세요.</a>
+                </p>
+                <span class="small">배너 유형 01</span>
+            </div>
         </section>    
         <!-- //bannerType -->
 
@@ -222,8 +261,65 @@
     </main>
     <!-- //mainType -->
 
-    <footer id="footerType">
-        <h2>푸터 영역</h2>
+    <footer id="footerType" class="footer__wrap nexon section gray">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="#">웹표준 사이트</a></li>
+                        <li><a href="#">반응형 사이트</a></li>
+                        <li><a href="#">패럴랙스 사이트</a></li>
+                        <li><a href="#">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="#">메뉴 유형01</a></li>
+                        <li><a href="#">메뉴 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="#">슬라이드 유형01</a></li>
+                        <li><a href="#">슬라이드 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>이미지 영역</h3>
+                    <ul>
+                        <li><a href="#">이미지 유형01</a></li>
+                        <li><a href="#">이미지 유형02</a></li>
+                        <li><a href="#">이미지/텍스트 유형01</a></li>
+                        <li><a href="#">이미지/텍스트 유형02</a></li>
+                        <li><a href="#">텍스트 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텍츠 영역</h3>
+                    <ul>
+                        <li><a href="#">카드 유형01</a></li>
+                        <li><a href="#">카드 유형02</a></li>
+                        <li><a href="#">카드 유형03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="#">푸터 메뉴 유형01</a></li>
+                        <li><a href="#">푸터 컨택트 유형02</a></li>
+                        <li><a href="#">푸터 이메일 유형03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__rigth">
+                2022 Manyong. Portfolio is Power<br>
+                All rights reserved.
+            </div>
+        </div>
     </footer>
     <!-- //footerType -->
 </body>
