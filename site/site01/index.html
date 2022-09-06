@@ -31,29 +31,29 @@
 </head>
 <body>
     <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역 바로가기</a>
-        <a href="#">이미지 영역 바로가기</a>
-        <a href="#">이미지/텍스트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">배너 영역 바로가기</a>
-        <a href="#">텍스트 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
+        <a href="#headerType">헤더 영역 바로가기</a>
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#imageType01">이미지 영역 바로가기</a>
+        <a href="#imgTextType">이미지/텍스트 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType">텍스트 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
     </div>
     <!-- //skip -->
 
-    <header id="headerType" class="header__wrap nexon">
+    <header id="headerType" class="header__wrap nexon scroll">
         <div class="header__inner">
             <div class="header__logo">
                 <a href="#">CAT <em>site</em></a> 
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">배너 영역</a></li>
-                    <li><a href="#">콘텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
+                    <li><a href="#imageType">이미지 영역</a></li>
+                    <li><a href="#imgTextType">이미지 텍스트 영역</a></li>
+                    <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#bannerType">텍스트 영역</a></li>
+                    <li><a href="#footerType">푸터 영역</a></li>
                 </ul>
             </div>
             <div class="header__member">
@@ -98,7 +98,7 @@
         </section>    
         <!-- //sliderType -->
 
-        <section id="imageType01" class="image__wrap nexon section">
+        <section id="imageType" class="image__wrap nexon section">
             <h2>고양이는 왜이리 귀여운가?</h2>
             <p>고양이는 보들보들 가슴털과 말랑말랑 발바닥을 가지고 있기 때문이죠. </p>
             <div class="image__inner container">
@@ -207,7 +207,7 @@
         </section>
         <!-- //cardType -->
 
-        <section id="bannerType" class="banner__wrap nexon">
+        <section id="bannerType" class="banner__wrap nexon>
             <h2 class="blind">배너 영역</h2>
             <div class="banner__inner">
                 <h3 class="title">고양이 사이트</h3>
@@ -322,5 +322,43 @@
         </div>
     </footer>
     <!-- //footerType -->
+
+    <script>
+        // window.addEventListener("scroll", ()=>{
+        //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        //     document.querySelectorAll(".section").forEach((e,i)=>{
+        //         if(scrollTop >= e.offsetTop - 2 ){
+        //             document.querySelectorAll(".header__menu li").forEach(li => {
+        //                 li.classList.remove("active")
+        //             });
+        //             document.querySelector(".header__menu li:nth-child("+ (i+1) +")").classList.add("active");
+        //         }
+        //     });
+        // });
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+            //forEach 문
+            document.querySelectorAll(".section").forEach((e,i)=>{
+                if(scrollTop >=  e.offsetTop-1 ){ //scrollTop이 id값 이상이면
+                    document.querySelectorAll(".header__menu ul li").forEach((li)=>{
+                        li.classList.remove("active");
+                    })
+                    document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("active");
+                }
+            })
+        })
+
+        document.querySelectorAll(".header__menu li a").forEach( li => {
+            li.addEventListener("click",(e)=>{
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>
