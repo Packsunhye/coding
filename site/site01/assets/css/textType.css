@@ -33,7 +33,7 @@
     top: 0;
     width: 60px;
     height: 60px;
-    background: url(/site/site01/assets/img/text_type_01_.svg);
+    background: url(../img/text_type_01_.svg);
     border-radius: 50%;
 }
 .text.t1 .text__title::before {

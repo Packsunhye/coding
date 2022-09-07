@@ -12,10 +12,10 @@
     box-sizing: border-box;
 }
 .image.img1 {
-    background: url(/site/site01/assets/img/imgType01_01.jpg) no-repeat center;
+    background: url(../img/imgType01_01.jpg) no-repeat center;
 }
 .image.img2 {
-    background: url(/site/site01/assets/img/imgType01_02.jpg) no-repeat center;
+    background: url(../img/imgType01_02.jpg) no-repeat center;
 }
 .image__title {
     font-size: 32px;
