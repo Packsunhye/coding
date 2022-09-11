@@ -33,6 +33,4 @@ https://packsunhye.github.io/coding/css/index.html
 
 
 ### Site
-https://packsunhye.github.io/coding/site/cardType/cardType01.html <br>
-https://packsunhye.github.io/coding/site/cardType/cardType02.html <br>
-https://packsunhye.github.io/coding/site/cardType/cardType03.html
+https://packsunhye.github.io/coding/site/site01/index.html  <br>
