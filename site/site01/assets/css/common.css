@@ -88,3 +88,27 @@
 .mt50 { margin-top: 50px !important; }
 .mt60 { margin-top: 60px !important; }
 .mt70 { margin-top: 70px !important; }
+
+@media(max-width : 460px){
+    .mb70 {
+        margin-bottom: 20px !important; 
+    }
+    .container {
+        width: 460px;
+        padding: 7px;
+        min-width: 460px;
+    }
+    .section {
+        padding: 45px 0;
+    }
+    .section > p {
+        word-break: keep-all;
+        margin-bottom: 24px;
+    }
+
+    .section > h2 {
+        font-size: 30px;
+        word-break: keep-all;
+    }
+   
+}

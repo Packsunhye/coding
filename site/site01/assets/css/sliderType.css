@@ -101,3 +101,26 @@
 .slider__dot a.stop {
     background-position: -60px -70px;
 }
+
+
+@media(max-width : 460px){
+    .slider__inner {
+        margin-top: 55px;
+    }
+    .slider__img {
+        width: 460px;
+    }
+    .slider__img .desc h3 {
+        font-size: 40px;
+    }
+    .slider__img .desc span {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .slider__img .desc p {
+        font-size: 14px;
+    }
+    .slider__arrow a.rigth, .slider__arrow a.left {
+        top: 300px;
+    }
+}

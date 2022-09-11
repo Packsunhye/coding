@@ -32,3 +32,17 @@
     font-size: 16px;
     text-decoration: underline;
 }
+
+@media(max-width : 460px){
+    .banner__inner {
+        padding: 80px;
+    }
+
+    .banner__inner .title {
+        font-size: 40px;
+    }
+    .banner__inner .desc {
+        font-size: 18px;
+        margin-bottom: 34px;
+    }
+}

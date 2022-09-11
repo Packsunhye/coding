@@ -76,3 +76,18 @@
     color: #666;
     text-underline-position: under;
 }
+
+@media(max-width : 460px){
+    .text__inner {
+        flex-direction: column;
+    }
+    .text {
+        width: 87%;
+    }
+    .text__title {
+        font-size: 20px;
+    }
+    .text__desc {
+        font-size: 18px;
+    }
+}

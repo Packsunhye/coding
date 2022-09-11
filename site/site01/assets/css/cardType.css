@@ -30,3 +30,13 @@
     -webkit-line-clamp: 4; 
     -webkit-box-orient: vertical;
 }
+
+@media(max-width : 460px){
+    .card_inner {
+        flex-direction: column;
+    }
+    .card {
+        width: 87%;
+        margin-bottom: 10px;
+    }
+}

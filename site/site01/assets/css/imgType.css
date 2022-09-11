@@ -14,11 +14,11 @@
     transition: all 0.15s ease-in-out;
 }
 .image.img1 {
-    background: url(/site/site_img/imgType01_01.png) no-repeat center;
+    background: url(../../../site_img/imgType01_01.png) no-repeat center;
     
 }
 .image.img2 {
-    background: url(/site/site_img/imgType01_02.png) no-repeat center;
+    background: url(../../../site_img/imgType01_02.png) no-repeat center;
 }
 .image.img1:hover,.image.img2:hover  {
     transform: scale(1.01);
@@ -50,3 +50,22 @@
 .image__btn.yellow {
     background-color: #626cc9b6;
 }
+
+@media(max-width : 460px){
+    .image__inner {
+        flex-direction: column;
+       
+    }
+    .image {
+        width: 86%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .image__title {
+        font-size: 28px;
+    }
+    .image__desc {
+        font-size: 16px;
+    }
+}
+   

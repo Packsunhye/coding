@@ -24,3 +24,28 @@
     color: #666;
     line-height: 1.5;
 }
+
+
+@media(max-width : 460px){
+    .footer__inner .footer__menu {
+        width: 89%;
+    }
+    
+    .footer__inner .footer__menu h3 {
+        font-size: 14px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+    .footer__inner .footer__menu li a {
+        font-size: 8px;
+        line-height: 1.4;
+        word-break: keep-all;
+    }
+    
+    .footer__inner .footer__menu > div {
+        width: 18%;
+    }
+    .footer__inner .footer__rigth {
+        width: 87%;
+    }
+}
