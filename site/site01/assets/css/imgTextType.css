@@ -17,6 +17,7 @@
     display: block;
 }
 .imgText__txt h3 {
+    color: #fff;
     font-size: 50px;
     font-weight: 300;
     word-break: keep-all;
@@ -27,7 +28,7 @@
     font-size: 18px;
     font-weight: 300;
     line-height: 1.5;
-    color: #666;
+    color: rgb(218, 218, 218);
     margin-bottom: 10px;
 }
 .imgText__txt ul {
@@ -40,7 +41,7 @@
     position: relative;
 }
 .imgText__txt ul li a {
-    color: #666;
+    color: rgb(148, 148, 148);
 }
 .imgText__txt ul li::before {
     content: '';
@@ -50,7 +51,7 @@
     position: absolute;
     left: 5px;
     top: 9px;
-    background: #666;
+    background: rgb(148, 148, 148);
 }
 .imgText__img {
     border-radius: 10px;
@@ -60,7 +61,7 @@
     position: absolute;
     left: 30px;
     bottom: 30px;
-    background-color: #7966ce;
+    background-color: #66a4ce7a;
     color: #fff;
     font-size: 18px;
     padding: 10px 30px;
@@ -69,12 +70,12 @@
 }
 
 .imgText__img  a.blue {
-    background-color: rgb(102, 170, 209);
+    background-color: rgba(125, 102, 209, 0.527);
 }
 
 .imgText__img.img1{
-    background : url(../img/imgText_01.jpg) no-repeat center / cover ;
+    background : url(/site/imgTextType/img/imgText_01.jpg) no-repeat center / cover ;
 }
 .imgText__img.img2{
-    background: url(../img/imgText_02.jpg) no-repeat center / cover;
+    background: url(/site/imgTextType/img/imgText_02.jpg) no-repeat center / cover;
 }

@@ -10,12 +10,20 @@
     color: #fff;
     padding: 200px 30px 30px 30px;
     box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.15s ease-in-out;
 }
 .image.img1 {
-    background: url(../img/imgType01_01.jpg) no-repeat center;
+    background: url(/site/site_img/imgType01_01.png) no-repeat center;
+    
 }
 .image.img2 {
-    background: url(../img/imgType01_02.jpg) no-repeat center;
+    background: url(/site/site_img/imgType01_02.png) no-repeat center;
+}
+.image.img1:hover,.image.img2:hover  {
+    transform: scale(1.01);
+    filter: brightness(110%);
+    
 }
 .image__title {
     font-size: 32px;
@@ -35,10 +43,10 @@
 .image__btn {
     font-size: 16px;
     color: #fff;
-    background-color: #eb7397af;
+    background-color: #1f1d94af;
     padding: 10px 20px;
     display: inline-block;
 }
 .image__btn.yellow {
-    background-color: #538649b6;
+    background-color: #626cc9b6;
 }

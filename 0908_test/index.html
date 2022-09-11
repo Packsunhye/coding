@@ -38,6 +38,8 @@
             min-width: 960px;
         
         }
+
+
     </style>
 </head>
 <body class="Nix">
@@ -98,7 +100,7 @@
                             </div>
                         </div>
                         <div class="ad_smoll">
-                            <img src="../0908_test/img/smol_02_01.jpg" alt="">
+                           <img src="../0908_test/img/smol_02_01.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -290,10 +292,14 @@
          //탭 메뉴
         const tabBtn = document.querySelectorAll(".Title ul li");
         const tabCont = document.querySelectorAll(".Contents > div");
+        const tabCont2 = document.querySelectorAll(".Contents .sudCont2 ");
+     
+        tabCont2.forEach(div => {
+            div.style.display = "none" ;
+        })
 
-    
-        
         tabBtn.forEach((element,index)=>{
+            
             //버튼을 클릭함
             element.addEventListener("click",(event)=>{ //내가 클릭한건 element에 있음
                 //이벤트를 막아줌
@@ -315,7 +321,9 @@
                 tabCont[index].style.display = "flex";
             });
         });
-        
+
+       
+       
     </script>
 
 </body>

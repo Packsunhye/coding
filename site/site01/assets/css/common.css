@@ -66,6 +66,10 @@
     background-color: #f5f5f5;
 }
 
+.black {
+    background-color: #000000;
+}
+
 /* 간격 세팅 */
 .mb0 { margin-bottom: 0 !important; }
 .mb10 { margin-bottom: 10px !important; }
