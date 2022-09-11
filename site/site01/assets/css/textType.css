@@ -79,10 +79,11 @@
 
 @media(max-width : 460px){
     .text__inner {
+        width: 100%;
         flex-direction: column;
     }
     .text {
-        width: 87%;
+        width: 100%;
     }
     .text__title {
         font-size: 20px;

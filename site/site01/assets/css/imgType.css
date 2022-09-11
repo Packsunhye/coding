@@ -53,13 +53,13 @@
 
 @media(max-width : 460px){
     .image__inner {
+        width: 100%;
         flex-direction: column;
        
     }
     .image {
-        width: 86%;
+        width: 100%;
         margin-bottom: 10px;
-        border-radius: 5px;
     }
     .image__title {
         font-size: 28px;

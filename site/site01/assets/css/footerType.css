@@ -28,7 +28,7 @@
 
 @media(max-width : 460px){
     .footer__inner .footer__menu {
-        width: 89%;
+        width: 100%;
     }
     
     .footer__inner .footer__menu h3 {
@@ -46,6 +46,6 @@
         width: 18%;
     }
     .footer__inner .footer__rigth {
-        width: 87%;
+        width: 100%;
     }
 }

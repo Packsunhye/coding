@@ -105,13 +105,14 @@
 
 @media(max-width : 460px){
     .slider__inner {
+        width: 100%;
         margin-top: 55px;
     }
     .slider__img {
-        width: 460px;
+        width: 100%;
     }
     .slider__img .desc {
-        width: 460px;
+        width: 100%;
     }
     .slider__img .desc h3 {
         font-size: 40px;
