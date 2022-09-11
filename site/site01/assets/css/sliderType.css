@@ -110,6 +110,9 @@
     .slider__img {
         width: 460px;
     }
+    .slider__img .desc {
+        width: 460px;
+    }
     .slider__img .desc h3 {
         font-size: 40px;
     }
