@@ -91,7 +91,7 @@
     }
 
     .imgText__inner div {
-        width: 86%;
+        width: 100%;
         text-align: center;
     }
     .imgText__txt {
@@ -108,7 +108,7 @@
         margin-bottom: 10px;
     }
     .imgText__txt p {
-        width: 80%;
+        width: 100%;
         padding-left: 45px;
         font-size: 16px;
         word-break: keep-all;

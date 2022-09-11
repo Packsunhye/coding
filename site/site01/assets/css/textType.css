@@ -89,6 +89,9 @@
         font-size: 20px;
     }
     .text__desc {
-        font-size: 18px;
+        font-size: 14px;
+    }
+    .text_btn {
+        font-size: 14px;
     }
 }
