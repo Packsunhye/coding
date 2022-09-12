@@ -32,6 +32,7 @@
     }
     .footer__inner .footer__menu {
         width: 100%;
+        text-align: center;
     }
 
     .footer__inner .footer__menu h3 {
