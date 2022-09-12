@@ -27,6 +27,9 @@
 
 
 @media(max-width : 460px){
+    .footer__inner {
+        margin-left: 5px;
+    }
     .footer__inner .footer__menu {
         width: 100%;
     }
@@ -43,7 +46,7 @@
     }
     
     .footer__inner .footer__menu > div {
-        width: 18%;
+        width: 15%;
     }
     .footer__inner .footer__rigth {
         width: 100%;
