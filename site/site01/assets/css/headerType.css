@@ -148,6 +148,7 @@
         .header__menu.active, .header__member.active {
             display: flex;
             justify-content: center;
+            
         }   
 
     

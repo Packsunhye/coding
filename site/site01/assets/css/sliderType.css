@@ -112,7 +112,8 @@
         width: 100%;
     }
     .slider__img .desc {
-        width: 100%;
+        width: 460px;
+        padding: 100px 0;
     }
     .slider__img .desc h3 {
         font-size: 40px;
@@ -120,9 +121,17 @@
     .slider__img .desc span {
         font-size: 14px;
         margin-bottom: 5px;
+        margin-left:30px; 
     }
     .slider__img .desc p {
         font-size: 14px;
+        margin-left: 30px;
+    }
+    .slider__img .desc h3 {
+        margin-left: 30px;
+    }
+    .slider__img .desc .btn {
+        text-align: center;
     }
     .slider__arrow a.rigth, .slider__arrow a.left {
         top: 300px;
