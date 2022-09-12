@@ -111,8 +111,12 @@
         font-size: 30px;
         word-break: keep-all;
     }
+    body {
+        width: 100%;
+    }
     header#headerType {
         width: 460px;
+        overflow: hidden;   
     }
     main#mainType {
         width: 460px;

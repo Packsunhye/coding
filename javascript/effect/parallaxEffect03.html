@@ -847,7 +847,7 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
         //     document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
         // })
         
-        // 02 밑으로 가면 top 올라오기
+        // 밑으로 가면 top 올라오기
         window.addEventListener("scroll", ()=>{
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
@@ -862,7 +862,7 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
             window.scrollTo({left: 0, top: 0, behavior: "smooth"});
         })
 
-        // 03
+        //메뉴바 이벤트
         let nowScroll = true; 
         let lastScroll = 0;  
 
@@ -890,6 +890,16 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
 
         window.addEventListener("scroll",scrollProgress)
 
+         //스크롤 이동
+         document.querySelectorAll("#parallax__nav li a").forEach( li => {
+            li.addEventListener("click",(e)=>{
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
         // //03 : 스크롤 값을 움직일 때 마다 작동되는 이벤트.
         // let nowScroll = true; //실행 0 // let nowScroll = false; //실행 x
         // let lastScroll = 0;
@@ -914,15 +924,7 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
         // }
         // window.addEventListener("scroll", scrollProgress); //함수를 바로 불러와서 추출한다.
 
-        //스크롤 이동
-        document.querySelectorAll("#parallax__nav li a").forEach( li => {
-            li.addEventListener("click",(e)=>{
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
+       
         
 
     </script>
