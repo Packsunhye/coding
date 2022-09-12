@@ -95,10 +95,14 @@
     } */
 
     @media(max-width : 460px){
+        #headertype {
+            overflow: hidden;
+        }
         .header__inner {
             padding: 10px;
             width: 100%;
             display: block;
+            overflow: hidden;
         }
         .header__logo {
             width: 80%;
