@@ -6,7 +6,7 @@
 
 .imgText__inner div {
     width: 32%;
-    /* height: 500px; */
+    height: 500px;
 }
 .imgText__txt span {
     font-size: 16px;

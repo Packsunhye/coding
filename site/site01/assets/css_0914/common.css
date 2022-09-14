@@ -96,7 +96,7 @@
 #headerType {
     display: none;
 }
-#sliderType {
+/* #sliderType {
     display: none;
 }
 #imgType {
@@ -111,12 +111,12 @@
 #bannerType {
     display: none;
 }
-/* #textType {
-    display: none;
-} */
-#footerType {
+#textType {
     display: none;
 }
+#footerType {
+    display: none;
+} */
 
 @media (max-width: 960px) {
     .section {

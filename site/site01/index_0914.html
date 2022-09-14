@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="assets/css_0914/reset.css">
     <link rel="stylesheet" href="assets/css_0914/common.css">
 
+    <link rel="stylesheet" href="assets/css_0914/swiper.css">
+
     <!-- style(섹션별로) -->
     <link rel="stylesheet" href="assets/css_0914/headerType.css">
     <link rel="stylesheet" href="assets/css_0914/sliderType.css">
@@ -72,7 +74,7 @@
         <section id="sliderType" class="slider__wrap nexon scroll">
             <h2 class="blind">슬라이드 영역</h2>
             <div class="slider__inner">
-                <div class="slider">
+                <!-- <div class="slider">
                     <div class="slider__img">
                         <div class="desc">
                             <span>Under the Sea</span>
@@ -98,7 +100,59 @@
                         <a href="#" class="play"><span class="ir">플레이</span></a>
                         <a href="#" class="stop"><span class="ir">정지</span></a>
                     </div>
-                </div>
+                </div> -->
+                
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide img1">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide img2">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide img3">
+                        <div class="desc">
+                            <span>Under the Sea</span>
+                            <h3>Jelly fish</h3>
+                            <p>
+                                심해 그 저편에는 말랑한 해파리들이 <br>
+                                가득 있습니다! 우리 같이 여러 모습들을 구경해보아요.
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+
+
             </div>
         </section>    
         <!-- //sliderType -->
@@ -323,6 +377,25 @@
     </footer>
     <!-- //footerType -->
 
+    <script src="../site01/assets/js/swiper-bundle.min.js"></script>
+     <!-- Initialize Swiper -->
+     <script>
+        var swiper = new Swiper(".mySwiper", {
+          cssMode: true,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+          autoplay : {
+            delay: 2000,
+          },
+          mousewheel: true,
+          keyboard: true,
+        });
+      </script>
     <script>
         // window.addEventListener("scroll", ()=>{
         //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;

@@ -83,9 +83,9 @@
         background: #f5f5f5;
     }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .text__title {
-        font-size: 24px;
+        font-size: 18px;
     }
     .text__desc {
         font-size: 16px;
@@ -94,6 +94,6 @@
 @media (max-width: 480px) {
    .text {
         width: 100%;
-        
    }
+
 }
