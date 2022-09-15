@@ -63,7 +63,11 @@
     font-weight: 400;
 }
 
-
+/* 가로모드 */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 /* 배경 */
 .gray {
     background-color: #f5f5f5;
@@ -92,10 +96,17 @@
 .mt60 { margin-top: 60px !important; }
 .mt70 { margin-top: 70px !important; }
 
-
-#headerType {
-    display: none;
+body {
+    overflow : overlay;
 }
+body.fixed {
+    height: 100vh;
+    overflow: hidden;
+    /* overflow-y: hidden; */
+}
+/* #headerType {
+    display: none;
+} */
 /* #sliderType {
     display: none;
 }

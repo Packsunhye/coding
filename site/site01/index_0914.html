@@ -63,9 +63,11 @@
             <div class="header__member">
                 <a href="#">로그인</a>
             </div>
-            <a href="#" class="header__icon">
-                <img src="../site_img/bars-solid.svg" alt="">
-            </a>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     <!-- //hraderType -->
@@ -148,6 +150,10 @@
                       </div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                   </div>
@@ -380,21 +386,76 @@
     <script src="../site01/assets/js/swiper-bundle.min.js"></script>
      <!-- Initialize Swiper -->
      <script>
-        var swiper = new Swiper(".mySwiper", {
-          cssMode: true,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-            el: ".swiper-pagination",
-          },
-          autoplay : {
-            delay: 2000,
-          },
-          mousewheel: true,
-          keyboard: true,
+          var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
         });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+
+        });
+        document.querySelector(".swiper-button-play").addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+
+        })
+
+        btnMenuList.forEach((List)=>{
+            List.addEventListener("click", ()=>{
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            })
+        })
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+
+            }
+        });
+
+        document.querySelectorAll("a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                });
+            });
+        });
+        
+
       </script>
     <script>
         // window.addEventListener("scroll", ()=>{
@@ -410,35 +471,28 @@
         //     });
         // });
 
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
-            //forEach 문
-            document.querySelectorAll(".scroll").forEach((e,i)=>{
-                if(scrollTop >=  e.offsetTop-500 ){ //scrollTop이 id값 이상이면
-                    document.querySelectorAll(".header__menu ul li").forEach((li)=>{
-                        li.classList.remove("active");
-                    });
-                    document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("active");
-                }; 
+        // window.addEventListener("scroll", () => {
+        //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+        //     //forEach 문
+        //     document.querySelectorAll(".scroll").forEach((e,i)=>{
+        //         if(scrollTop >=  e.offsetTop-500 ){ //scrollTop이 id값 이상이면
+        //             document.querySelectorAll(".header__menu ul li").forEach((li)=>{
+        //                 li.classList.remove("active");
+        //             });
+        //             document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("active");
+        //         }; 
                 
-            });
-        });
+        //     });
+        // });
 
-        document.querySelectorAll(".header__menu li a").forEach( li => {
-            li.addEventListener("click", e => {
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({behavior: "smooth"});
-            });
-        });
+        // document.querySelectorAll(".header__menu li a").forEach( li => {
+        //     li.addEventListener("click", e => {
+        //         e.preventDefault();
+        //         document.querySelector(li.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+        //     });
+        // });
+        
 
-        const headerIcon = document.querySelector(".header__icon")
-        const menu = document.querySelector(".header__menu")
-        const member = document.querySelector(".header__member")
-
-        headerIcon.addEventListener("click", ()=>{
-            menu.classList.toggle("active")
-            member.classList.toggle("active")
-        })
 
     </script>
 </body>
