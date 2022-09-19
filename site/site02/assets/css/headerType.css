@@ -1,0 +1,63 @@
+       /* 헤더 유형 */
+       .header__inner {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+        /* backdrop-filter: blur(10px); */
+        width: 100%;
+        /* display: flex;
+        align-items: center; */
+        /* justify-content: space-between; */
+        /* padding: 20px; */
+        box-sizing: border-box;
+        border-bottom: 1px solid #000;
+        z-index: 10000;
+    }
+
+    .header__logo {
+       width: 100%;
+       text-align: center;
+       font-family: 'UtoLittleBear';
+
+    }
+    .header__logo a {
+        color: #888;
+        font-weight: 700;
+        font-size: 50px;
+    }
+    .header__logo em {
+       font-size: 40px;
+       
+    }
+    .header__menu {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__menu li {
+       display: inline;
+       margin-right: 108px;
+       font-size: 16px;
+        font-weight: 700;
+    }
+    .header__menu li:last-child {
+        margin-right: 0;
+    }
+
+    .header__menu li a {
+        color: #999;
+        
+
+    }
+    .header__menu li.active a {
+       
+    }
+    .header__menu li a:hover {
+        
+    }
+   

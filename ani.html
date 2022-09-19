@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(118, 97, 158);
+        }
+
+        .loader  {
+            position: absolute;
+            top: 50%;
+            left:50%; /*50% right on the parent element*/
+            transform:translate(-50%,-50%); /*50% of element width (50px) left, 50% of element height (50px) up*/
+            width:100px; /*Element is 100px wide*/
+            height:100px; /*Element is 100px tall*/
+            animation: spin .6s linear infinite reverse;
+        }
+        .ball {
+         position: absolute; /*Same deal with centering the element like with .loader, but the parent of .ball is .loader*/
+         top:50%;
+         left:50%;
+         transform:translate(-50%,-50%);
+         height:100%; /*Height is 100% of the parent not 100% of the screen height (that's 100vh)*/
+         animation: spin 1s infinite ease-in-out; 
+        }
+        .ball::after {
+            position: absolute; /*Pseudoclasses for use as shapes need to be position absolute*/
+            content: ''; /*And content defined (Add some text into it)*/
+            background-color: #fff; /*SCSS variable using the white from line 8*/
+            width:5px; /*Width 5 pixels*/
+            height:5px; /*Height 5 pixels*/
+            border-radius:100%; /*Corners will be rounded into an oval*/
+            top:0px;
+        } 
+
+        .ball:nth-child(1) { /*The first .ball in the parent*/
+            animation-delay:-0s;
+        }
+        .ball:nth-child(2) {
+        animation-delay:-0.1s; /*Start the animation 0.1s before*/
+        }
+        .ball:nth-child(3) {
+        animation-delay:-0.2s; /*Start the animation 0.2s before*/
+        }
+        .ball:nth-child(4) {
+        animation-delay:-0.3s;
+        }
+        .ball:nth-child(5) {
+        animation-delay:-0.4s;
+        }
+        .ball:nth-child(6) {
+        animation-delay:-0.5s;
+        }
+        .ball:nth-child(7) {
+        animation-delay:-0.6s;
+        }
+        .ball:nth-child(8) {
+        animation-delay:-0.7s;
+        }
+        .ball:nth-child(9) {
+        animation-delay:-0.8s;
+        }
+        .ball:nth-child(10) {
+        animation-delay:-0.9s; /*I am a fan of negative delays*/
+        }
+
+        @keyframes spin { /*The keyframes for the animation `spin`*/
+           0% { /*At 0% of the animation whatever elements have these keyframes set as an animation will have these properties*/
+              transform:translate(-50%,-50%) rotate(0deg);
+           }
+           /*The balls do not change colour because the animation is set to their parent and not themselves*/
+           100% {
+              transform:translate(-50%,-50%) rotate(360deg);
+           }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

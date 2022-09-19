@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 이펙트 03</title>
+    <title>슬라이드 이펙트 04</title>
 
     
     <link rel="stylesheet" href="../assets/css/slider.css">
@@ -34,7 +34,6 @@
             width: 4800px; /* 총 이미지 */
             height: 450px;
 
-           
         }
 
         .slider { /* 개별적인 이미지 */
@@ -197,88 +196,80 @@
                    <div class="cont">
                         <div class="active">
 <pre><code class="language-js scroll">const sliderWrap = document.querySelector(".slider__wrap")
-    const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
-    const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
-    const slider = document.querySelectorAll(".slider")          //각각의 이미지
+const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
+const slider = document.querySelectorAll(".slider")   
+const sliderBtn = document.querySelector(".slider__btn")  //버튼
+const sliderBtnPrev = document.querySelector(".prev")  //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".next")  //오른쪽 버튼
 
-    let currentIndex = 0;                                               //현재 보이는 이미지
-    let sliderCount = slider.length;                                    //이미지 갯수
-    let sliderWidth = sliderImg.offsetWidth;                            //이미지 가로값
-    let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
-    sliderInner.appendChild(sliderClone);                               //첫번째 이미지를 마지막에 넣어줌
+let currentIndex = 0;                       //현재 보이는 이미지
+let sliderCount = slider.length;            //이미지 갯수 
+let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값  
 
-    function sliderEffect(){
-        currentIndex++;
-        sliderInner.style.transition = "all 0.6s";
+//이미지 움직이는 영역
+function gotoSlider(num){
+    sliderInner.style.transition = "all 400ms";
+    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+    currentIndex = num;
+}
 
-        sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex +"px)";
-        // sliderInner.style.transform = "translateX(-800px)";  800 * 1
-        // sliderInner.style.transform = "translateX(-1600px)"; 800 * 2
-        // sliderInner.style.transform = "translateX(-2400px)"; 800 * 3
-        // sliderInner.style.transform = "translateX(-3200px)"; 800 * 4
-        // sliderInner.style.transform = "translateX(-4000px)"; 800 * 5
-        // sliderInner.style.transform = "translateX(-4800px)"; 800 * 6
-        
-        //마지막 사진에 위치 했을 때 
-        if(currentIndex == sliderCount){
-           setTimeout(() => {
-                sliderInner.style.transition = "0s";
-                sliderInner.style.transform = "translateX(0px)";
-           }, 700);
+//왼쪽 버튼 클릭
+sliderBtnPrev.addEventListener("click", ()=>{
+    let prevIndex = ( currentIndex + (sliderCount - 1) ) % sliderCount
+    gotoSlider(prevIndex);
+    // gotoSlider( 현재이미지 -1 ); 그리고 1 -> 5 으로도 가게 함
+})
 
-            currentIndex = 0;
-        }
-    }
-    setInterval(sliderEffect, 1500);</code></pre>
+
+//오른쪽 버튼 클릭
+sliderBtnNext.addEventListener("click", ()=>{
+    let nextIndex = ( currentIndex + 1 ) % sliderCount
+    gotoSlider(nextIndex);
+    //0 1 2 3 4
+})</code></pre>
                         </div>
                         <div>
-<pre><code class="language-html scroll">>&lt;div class="slider__img"&gt;
-    &lt;div class="slider__inner"&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_06-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_07-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_09-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
-        &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_10.jpg" alt="이미지5"&gt;&lt;/div&gt;
+<pre><code class="language-html scroll">&lt;div class="slider__wrap"&gt;
+    &lt;div class="slider__img"&gt;
+        &lt;div class="slider__inner"&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_02-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_05-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_03-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+            &lt;div class="slider"&gt;&lt;img src="../../assets/silde/min_jelly/slide_main_07-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt; </code></pre>
+    &lt;div class="slider__btn"&gt;
+        &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+        &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
                         </div>
                         <div>
-<pre><code class="language-css scroll" >.slider__img { /* 이미지 보이는 영역 */
-    position: relative;
-    width: 800px;
-    height: 450px;
-    overflow: hidden;
-}
-
-.slider__inner { /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
-    display: flex;
-    flex-wrap: wrap ;
-    width: 4800px; /* 총 이미지 */
-    height: 450px;
-
-   
-}
-
-.slider { /* 개별적인 이미지 */
-    position: relative;
-    width: 800px;
-    height: 450px;
-}
-
-.slider::before {
+<pre><code class="language-css scroll" >.slider__btn a {
     position: absolute;
-    left: 5px;
-    top: 5px;
-    background-color: rgba(0,0,0,0.4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    transition: all 0.2s;
+    display: block;
     color: #fff;
-    padding: 5px 10px;
+    line-height: 50px;
+    border-radius: 10%;
 }
-.slider:nth-child(1)::before {content: "이미지1";}
-.slider:nth-child(2)::before {content: "이미지2";}
-.slider:nth-child(3)::before {content: "이미지3";}
-.slider:nth-child(4)::before {content: "이미지4";}
-.slider:nth-child(5)::before {content: "이미지5";}
-.slider:nth-child(6)::before {content: "이미지1";} </code></pre>
+.slider__btn a:hover {
+    background-color: rgba(130, 121, 255, 0.541);
+}
+.slider__btn a.prev {
+    left: 0;
+}
+.slider__btn a.next {
+    right: 0;
+}</code></pre>
                         </div>
                    </div>
                 </div>
@@ -317,11 +308,7 @@
 
         //왼쪽 버튼 클릭
         sliderBtnPrev.addEventListener("click", ()=>{
-            let prevIndex = ( currentIndex - 1 ) % sliderCount
-            if(prevIndex == -1){
-                prevIndex = 4;
-
-            }
+            let prevIndex = ( currentIndex + (sliderCount - 1) ) % sliderCount
             gotoSlider(prevIndex);
             // gotoSlider( 현재이미지 -1 ); 그리고 1 -> 5 으로도 가게 함
         })

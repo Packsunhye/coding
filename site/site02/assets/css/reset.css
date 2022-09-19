@@ -96,18 +96,18 @@ img, fieldset,button {
 }
 
 /* 클리어 픽스 */
-    .clearfix {
-        zoom: 1;
-    }
-    .clearfix::before,
-    .clearfix::after {
-        content: '';
-        display: block;
-        line-height: 0;
-    }
-    .clearfix::after{
-        clear: both;
-    }
+.clearfix {
+    zoom: 1;
+}
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: block;
+    line-height: 0;
+}
+.clearfix::after{
+    clear: both;
+}
 
 /* 블라인드 효과*/
 /* .blind {
@@ -138,3 +138,4 @@ img, fieldset,button {
     text-indent: -9999px;
 }
 
+/* 가로모드 폰트 크기 초기화 */
