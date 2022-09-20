@@ -404,3 +404,26 @@ body {
     background: #d6d6d6;
 }
 
+#scrollTop__info {
+    position: fixed;
+    left: 50%;
+    bottom: -220px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+#scrollTop__info.show {
+    bottom: 20px;
+}
+#scrollTop__info:hover {
+    background-color: #fff;
+    color: #000;
+}

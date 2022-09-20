@@ -8,6 +8,7 @@
 
 <link rel="stylesheet" href="assets/css/dracula.css">
 <link rel="stylesheet" href="assets/css/stlye.css">
+</head>
 
 <body>
     <header id="header">
@@ -772,6 +773,10 @@
     </main>
     <!-- //main -->
 
+    <div id="scrollTop__info">
+        Top
+    </div>
+
     <footer id="footer">
         <a href="mailto:sunhey9810@gmail.com">sunhey9810@gmail.com</a>
     </footer>
@@ -1127,4 +1132,22 @@
         document.write(name3);
     }
    </script>
-    
+    <script>
+        // 밑으로 가면 top 올라오기
+        window.addEventListener("scroll", ()=>{
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+            document.querySelector("#scrollTop__info").classList.add("show")
+        }else { 
+            document.querySelector("#scrollTop__info").classList.remove("show")
+        }
+        })
+        // top 누르면 올라오기
+        document.querySelector("#scrollTop__info").addEventListener("click", ()=>{
+            window.scrollTo({left: 0, top: 0, behavior: "smooth"});
+        })
+    </script>
+
+</body>
+</html> 
