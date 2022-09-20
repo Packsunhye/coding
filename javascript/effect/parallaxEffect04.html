@@ -252,7 +252,7 @@
 
   <body class="img08">
     <header id="header" class="arir">
-      <h1 class="Nix">Javascript parallax Effect 04</h1>
+      <h1 class="Nix"><a href="parallaxEffect.html">Javascript parallax Effect 04</a></h1>
       <p>패럴렉스 이펙트 - 나타나기 </p>
       <ul>
         <li><a href="parallaxEffect01.html">1</a></li>
@@ -829,7 +829,7 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
 
         //재귀함수
         function scroll(){
-            let scrollTop = window.pageYOffset || document.documentURI.scrollTop || window.screenY;
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.screenY;
 
             document.querySelectorAll(".content__item").forEach(item => {
                 if(scrollTop > item.offsetTop - window.innerHeight/2){
