@@ -1,62 +1,59 @@
-/* cardType */
-.card_inner {
-    display: flex;
-    justify-content: space-between;  /* 가운데 정렬로 맞추기*/
-}
-.card {
-    width: 32%;
-    background-color: #f5f5f5;
-}
-.card_body {
-    padding: 24px;
-}
-.card_body .tit {
-    font-size: 24px;
-    margin-bottom: 10px;
-    overflow: hidden; /* 한줄 효과 */
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding-right: 20px;
-}
-.card_body .desc {
-    font-size: 18px;
-    line-height: 1.4;
-    color: #666;
-    margin-bottom: 20px;
-    font-weight: 300;
-    overflow: hidden; /* 2줄 이상 효과 */
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4; 
-    -webkit-box-orient: vertical;
-}
+        /* ir 효과(이미지 대체 효과 == alt)*/
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
 
-@media(max-width: 960px){
-    .card_inner {
-        flex-wrap: wrap;
-    }
-    .card {
-        width: 49%;
-    }
+        /* cardType02 */
+        .card_wrap {
+            background-color: rgb(238, 240, 247);
+        }
+        .card_inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-    .card:last-child {
-        display: none;
-    }
-}
-@media(max-width: 600px){
-    .card {
-        width: 100%;
-    }
-
-    .card:first-child {
-        margin-bottom: 20px;
-    }
-
-    .card_body {
-        padding: 20px;
-    }
-
-    .card_body .desc {
-
-    }
-}
+        .card_inner .card {
+            width: 24%;
+            position: relative;
+        }
+        .card_inner .card:first-child {
+            margin-bottom: 50px;
+        }
+        .card_inner .card img {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .card_inner .card .tit {
+            font-size: 28px;
+            margin-bottom: 10px;
+            overflow: hidden; /* 한줄 효과 */
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+        .card_inner .card .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+            overflow: hidden; /* 2줄 이상 효과 */
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+        .card_inner .card .more {
+            width: 23px;
+            height: 24px;
+            background-image: url(../../img/Frame\ 1.svg);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 230px;
+            border-radius: 5px;
+        }

@@ -104,30 +104,8 @@ body.fixed {
     overflow: hidden;
     /* overflow-y: hidden; */
 }
-/* #headerType {
-    display: none;
-} */
-/* #sliderType {
-    display: none;
-}
-#imgType {
-    display: none;
-}
-#imgTextType {
-    display: none;
-}
-#cardType {
-    display: none;
-}
-#bannerType {
-    display: none;
-}
-#textType {
-    display: none;
-}
-#footerType {
-    display: none;
-} */
+
+
 
 @media (max-width: 960px) {
     .section {
