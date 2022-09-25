@@ -1,5 +1,5 @@
 .slider__inner {
-    margin-top: 130px;
+    margin-top: 160px;
 }
 
 .swiper-slide {
@@ -164,25 +164,54 @@
 
 /* media */
 @media (max-width: 960px) {
+    .slider__wrap {
+        overflow: hidden;
+    }
+    
     .swiper-slide .desc {
         width: 100%;
         text-align: center;
     }
     .swiper-slide .desc h3 {
-        font-size: 70px;
+        font-size: 80px;
     }
-    .swiper-slide .desc img {
+    .swiper-slide .desc p {
+        margin-bottom: 40px;
+    }
+    .swiper-slide .desc > img {
         width: 25rem;
         height: 25rem;
         top: 10%;
     }
+
+    .swiper-slide .desc .gramain {
+        right: 0;
+        top: 3%;
+    }
+    .camera {
+        z-index: -1;
+        top: 30px;
+        right: 260px;
+    }
+    .action {
+        z-index: -1;
+        top: 120px;
+        right: 30px;
+    }
+    .usan {
+        z-index: -1;
+        top: 250px;
+        right: 205px;
+    }
+   
 }
 @media (max-width: 600px) {
     .swiper-slide .desc {
         padding: 80px 0;
     }
     .swiper-slide .desc h3 {
-        font-size: 30px;
+        font-size: 50px;
+        line-height: 70px;
     }
     .swiper-slide .desc p {
         font-size: 16px;
@@ -191,8 +220,51 @@
     .swiper-slide .desc .btn a {
         padding: 10px 25px;
     }
-    .swiper-slide .desc img {
+    .swiper-slide .desc > img {
         width: 18rem;
         height: 18rem;
     }
+    .swiper-slide .desc .gramain {
+        right: 9%;
+        top: -2%;
+    }
+    .camera {
+        z-index: -1;
+        top: 15px;
+        right: 310px;
+    }
+    .action {
+        z-index: -1;
+        top: 75px;
+        right: 70px;
+    }
+    .usan {
+        z-index: -1;
+        top: 225px;
+        right: 265px;
+    }
+}
+@media (max-width: 460px){
+    .swiper-slide .desc .gramain {
+        width: 24rem;
+        height: 24rem;
+
+        right: 10%;
+        top: 3%;
+    }
+    .camera {
+        top: 45px;
+        right: 260px;
+    }
+    .action {
+        z-index: -1;
+        top: 95px;
+        right: 25px;
+    }
+    .usan {
+        z-index: -1;
+        top: 205px;
+        right: 195px;
+    }
+    
 }

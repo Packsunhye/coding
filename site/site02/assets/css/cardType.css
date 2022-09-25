@@ -57,3 +57,44 @@
             top: 230px;
             border-radius: 5px;
         }
+
+        @media (max-width: 1200px) {
+            .card_wrap {
+                overflow: hidden;
+            }
+            .card_inner {
+                width: 98%;
+            }
+            .card_inner .card .more {
+                top: 220px;
+            }
+        }
+        @media (max-width: 980px) {
+            .card_inner .card .more {
+                top: 185px;
+            }
+        
+         }
+         @media (max-width: 900px) {
+            .card_inner .card .more {
+                display: none;
+            }
+            .card_inner .card .tit {
+                font-size: 20px;
+            }
+            .card_inner .card .desc {
+                font-size: 14px;
+            }
+         }
+         @media (max-width: 480px) {
+            .card_inner {
+                flex-direction: column;
+            }
+            .card_inner .card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .card_inner .card:first-child {
+                margin-bottom: 20px;
+            }
+         }

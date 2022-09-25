@@ -75,3 +75,13 @@
 .image__desc .more:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 960px) {
+   .image__wrap {
+    width: 98%;
+   }
+}
+@media (max-width: 600px) {
+    
+   
+}
