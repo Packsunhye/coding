@@ -36,6 +36,7 @@
             <h1> CSS 속성 첫글자 검색하기 </h1>
             <div class="search__info">
                 <div class="keyword">
+                    <span class="all">ALL</span>
                     <span>a</span>
                     <span>b</span>
                     <span>c</span>
@@ -63,7 +64,8 @@
                     <span>y</span>
                     <span>z</span>
                 </div>
-                <div> 전체 속성 갯수 : <span class="num">0</span> </div>
+                <div class="use__num"> 전체 속성 갯수 : <span class="num">0</span> </div>
+                <div class="use__sum"></div>
             </div>
             <div class="search__list">
                 <div class="css">
@@ -745,7 +747,8 @@ searchKeyword.forEach(el => {
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");      //알파벳
         const searchList = document.querySelectorAll(".search__list ul li")                 //목록 리스트
         const searchInfo = document.querySelector(".search__info .num");                    //전체갯수
-        const searchInfo_sT = document.querySelector(".search__info .num");                    //전체갯수
+        const searchSum = document.querySelector(".search__info .use__sum");                    //전체갯수
+        const searchAll = document.querySelector(".search__info .all");                    //전체갯수
 
         //갯수
         searchInfo.textContent = searchList.length;
@@ -753,7 +756,7 @@ searchKeyword.forEach(el => {
         searchKeyword.forEach(el => {
             el.addEventListener( "click" , ()=>{
                 const searchWord = el.innerText;
-
+                
                 // console.log(searchWord);
 
                 searchList.forEach(el => {
@@ -766,13 +769,28 @@ searchKeyword.forEach(el => {
                     }else {
                         el.classList.add("hide");
                     }
+                    
                 });
+
                 const hidingNum = document.querySelectorAll(".search__list ul li.hide");
-                searchInfo_sT.textContent = searchList.length - hidingNum.length;
+                searchInfo.textContent = searchList.length - hidingNum.length;
+                // 'click'한 속성이 몇개
+                searchSum.textContent = `${el.textContent}의 검색 결과 갯수는 ${searchList.length - hidingNum.length}입니다.`;
+                // all
+                searchAll.addEventListener("click",()=>{
+                    searchSum.textContent = `${el.textContent}의 검색 결과 갯수는 ${searchList.length}입니다.`;
+                    searchList.forEach((e,i)=>{
+                        e.classList.remove("hide");
+                    })
+                })
+                
+
             });
         });
-        
 
+        //눌렀을 때, 'click'한 속성이 몇개 입니다. , 그리고 아무것도 없다는 멘트도 뜨게 하기 + ALL 도 만들기
+       
+ 
     </script>
 </body>
 </html>

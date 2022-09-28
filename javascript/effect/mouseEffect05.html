@@ -13,67 +13,70 @@
     /* mouseType */
     body::after {
 
-        background:rgba(160, 145, 201, 0.884) !important;
+      background:rgb(139 110 139 / 65%) !important;
     }
 
     .mouse__wrap {
-        width: 100%;
-        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         color: #fff;
+        width: 100%;
+        height: 100vh;
         overflow: hidden;
+        cursor: none;
         
     }
+    .mouse__img {
+      transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: all 0.3s;
 
+    }
     .mouse__wrap figure {
-      width: 50vw;
-      height: 50vh;
-      overflow: hidden;
-      position: relative;
-      transition: transform 500ms ease;
-      cursor: none;
+      width: 43vw;
+    }
+    .mouse__wrap figure::before {
+      content: '';
+      position: absolute;
+      left: 5%;
+      bottom: -30px;
+      width: 90%;
+      background: url(../../assets/silde/min_jelly/slide_bg_08-min.jpg) center no-repeat;
+      height: 100px;
+      background-size: 100% 40px;
+      filter: blur(15px) grayscale(50%);
+      z-index: -1 ;
+      opacity: 0.7;
     }
 
-    .mouse__wrap figure figcaption {
+    .mouse__img figcaption {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      font-size: 16px;
+      font-size: 1vw;
+      line-height: 1.6;
+      transform: translate3d(-50%, -50% , 150px);
+      padding: 1vw;
       white-space: nowrap;
-      line-height: 1.4;
-      font-weight: 300;
-     
-    }
-
-    .mouse__wrap figure:hover {
-      transform: scale(1.025);
-    }
-
-    .mouse__wrap figure img {
-      position: absolute;
-      left: -5%;
-      top: -5%;
-      width: 110%;
-      height: 110%;
-      object-fit: cover;
+      text-align: center;
+      background: rgba(0,0,0,0.4);
     }
 
     .mouse__cursor {
       position: absolute;
       left: 0;
       top: 0;
-      width: 20px;
-      height: 20px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      background: #fff;
+      background-color: #fff;
       z-index: 1000;
-      user-select: none;
       pointer-events: none;
+      user-select: none;
+      mix-blend-mode: difference;
     }
 
     .mouse__info {
@@ -85,21 +88,22 @@
         color: #fff;
         margin-bottom: 10px;
       }
-  
+
+
 
     </style>
   </head>
 
-  <body class="img05">
+  <body class="img06">
     <header id="header" class="arir">
-      <h1 class="Nix">Javascript Mouse Effect 04</h1>
-      <p>마우스 이펙트 - 이미지 효과</p>
+      <h1 class="Nix">Javascript Mouse Effect 05</h1>
+      <p>마우스 이펙트 - 기울기 효과 / 글씨 반전 효과</p>
       <ul>
         <li><a href="mouseEffect01.html">1</a></li>
         <li><a href="mouseEffect02.html">2</a></li>
         <li><a href="mouseEffect03.html">3</a></li>
-        <li class="active"><a href="mouseEffect04.html">4</a></li>
-        <li><a href="mouseEffect05.html">5</a></li>
+        <li><a href="mouseEffect04.html">4</a></li>
+        <li class="active"><a href="mouseEffect05.html">5</a></li>
         <li><a href="mouseEffect06.html">6</a></li>
         <li><a href="mouseEffect07.html">7</a></li>
       </ul>
@@ -109,25 +113,32 @@
       <section id="mouseType">
         <div class="mouse__cursor"></div>
         <div class="mouse__wrap">
-          <figure>
-            <img src="../../assets/silde/min_jelly/slide_bg_07-min.jpg" alt="이미지">
+          <div class="mouse__img">
+            <figure>
+              <img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지">
+            </figure>
             <figcaption>
-              <p>In order to succeed, we must first believe that we can.</p>
-              <p>성공하기 위해서, 우리는 먼저 우리 자신이 할 수 있다는 것을 믿어야 한다.</p>
+              <p>We never know the worth of water till the well is dry.</p>
+              <p>우물이 마르기까지는 물의 가치를 모른다</p>
             </figcaption>
-          </figure>
+          </div>
         </div>
       </section>
 
-      
+         
       <div class="mouse__info">
         <ul>
           <li>mousePageX : <span class="mousePageX">0</span> px </li>
           <li>mousePageY : <span class="mousePageY">0</span> px </li>
           <li>centerPageX : <span class="centerPageX">0</span> px </li>
           <li>centerPageY : <span class="centerPageY">0</span> px </li>
+          <li>maxPageX : <span class="maxPageX">0</span> px </li>
+          <li>maxPageY : <span class="maxPageY">0</span> px </li>
+          <li>anglePageX : <span class="anglePageX">0</span> px </li>
+          <li>anglePageY : <span class="anglePageY">0</span> px </li>
         </ul>
       </div>
+
 
     </main>
 
@@ -198,174 +209,138 @@
                   </div>
                  <div class="cont">
                       <div class="active">
-<pre><code class="language-js scroll">const cursor = document.querySelector(".mouse__cursor")
-const cursor2 = document.querySelector(".mouse__cursor2")
-const span = document.querySelectorAll(".mouse__wrap span")
-const header = document.querySelectorAll("#header")
-const btn = document.querySelectorAll(".modal__wrap .modal__btn")
+<pre><code class="language-js scroll">const mouseMove = (e) => {
+  //마우스 좌표값
+  let mousePageX = e.pageX;
+  let mousePageY = e.pageY;
 
-window.addEventListener("mousemove", e => {
-  //커서에 좌표값 할당
-  // cursor.style.left = e.pageX-5 + "px";
-  // cursor.style.top = e.pageY-5 + "px";
+  //마우스 좌표 기준점을 가운데로 변경
+  let centerPageX = window.innerWidth/2 - mousePageX;
+  let centerPageY = window.innerHeight/2 - mousePageY;
 
-  // cursor2.style.left = e.pageX-15 + "px";
-  // cursor2.style.top = e.pageY-15 + "px";
-
-  //GSAP
-  gsap.to(cursor, {duration: 0.15, left:e.pageX-5, top:e.pageY-5});
-  gsap.to(cursor2, {duration: 0.5, left:e.pageX-15, top:e.pageY-15});
+  //최소값은 -100 최대값은 100
+  let maxPageX =  Math.max(-100, Math.min(100,centerPageX));
+  let maxPageY = Math.max(-100, Math.min(100,centerPageY));
 
 
-  //오버 효과
-  // mouseenter / mouseover  / 이벤트 버블링 
-  span.forEach(span => {
-      span.addEventListener("mouseenter", ()=>{
-        cursor.classList.add("active");
-        cursor2.classList.add("active");
-      });
-      span.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove("active");
-        cursor2.classList.remove("active");
-      });
-  });
+  //각도 줄이는 설정
+  let anglePageX = maxPageX * 0.3;
+  let anglePageY = maxPageY * 0.3;
 
-  //옛날 효과
-  // span.forEach(function(){
-  //   this.addEventListener("mouseenter", function(){});
-  // })
+  //부드럽게 설정
+  let softPageX = 0 , softPageY = 0;
+  softPageX += (anglePageX - softPageX) * 0.4;
+  softPageY += (anglePageY - softPageY) * 0.4;
 
-  header.forEach( header => {
-      header.addEventListener("mouseenter", ()=>{
-        cursor.classList.add("active");
-        cursor2.classList.add("active");
-      });
-      header.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove("active");
-        cursor2.classList.remove("active");
-      });
-  })
+  //이미지 움직이기
+  const imgMove = document.querySelector(".mouse__img");
+  imgMove.style.transform = "perspective(600px) rotateX("+ -softPageY +"deg) rotateY("+ -softPageX +"deg)"
 
-  btn.forEach( btn => {
-    btn.addEventListener("mouseenter", ()=>{
-        cursor.classList.add("show");
-        cursor2.classList.add("show");
-      });
-      btn.addEventListener("mouseleave", ()=>{
-        cursor.classList.remove("show");
-        cursor2.classList.remove("show");
-      });
-  })
-})</code></pre>
+  //커서 
+  gsap.to(".mouse__cursor" , {duration : 0.3 , left: mousePageX -50 , top : mousePageY -50 })
+
+  //출력
+  document.querySelector(".mousePageX").textContent = mousePageX;
+  document.querySelector(".mousePageY").textContent = mousePageY;
+  document.querySelector(".centerPageX").textContent = centerPageX;
+  document.querySelector(".centerPageY").textContent = centerPageY;
+  document.querySelector(".maxPageX").textContent = maxPageX;
+  document.querySelector(".maxPageY").textContent = maxPageY;
+  document.querySelector(".anglePageX").textContent = Math.round(anglePageX) ;
+  document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+
+};
+
+window.addEventListener("mousemove", mouseMove);</code></pre>
                       </div>
                       <div>
-<pre><code class="language-html scroll">&lt;main id="main"&gt;
-  &lt;section id="mouseType"&gt;
-    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-    &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
-    &lt;div class="mouse__wrap"&gt;
-      &lt;p class="Nix"&gt;&lt;span&gt;Nature&lt;/span&gt; never &lt;span&gt;deceives&lt;/span&gt; us it is we who deceive &lt;span&gt;ourselves&lt;/span&gt;&lt;/p&gt;
-      &lt;p class="arir"&gt;&lt;span&gt;자연&lt;/span&gt;은 인간을 결코 &lt;span&gt;속이지 않는다.&lt;/span&gt; 우리를 속이는 것은 항상 &lt;span&gt;우리 자신&lt;/span&gt;이다.&lt;/p&gt;
+<pre><code class="language-html scroll">&lt;section id="mouseType"&gt;
+  &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+  &lt;div class="mouse__wrap"&gt;
+    &lt;div class="mouse__img"&gt;
+      &lt;figure&gt;
+        &lt;img src="../../assets/silde/min_jelly/slide_main_08-min.jpg" alt="이미지"&gt;
+      &lt;/figure&gt;
+      &lt;figcaption&gt;
+        &lt;p&gt;We never know the worth of water till the well is dry.&lt;/p&gt;
+        &lt;p&gt;우물이 마르기까지는 물의 가치를 모른다&lt;/p&gt;
+      &lt;/figcaption&gt;
     &lt;/div&gt;
-  &lt;/section&gt;
-&lt;/main&gt;</code></pre>
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
                       </div>
                       <div>
-<pre><code class="language-css scroll">/* mouseType */
-body::after {
-
-    background:rgba(43, 37, 59, 0.651);
-}
-
-
-.mouse__wrap {
-  width: 100%;
-  height: 100vh;
+<pre><code class="language-css scroll">.mouse__wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: #fff;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
   cursor: none;
+  
+}
+.mouse__img {
+transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+transform-style: preserve-3d;
+will-change: transform;
+transition: all 0.3s;
+
+}
+.mouse__wrap figure {
+width: 43vw;
+}
+.mouse__wrap figure::before {
+content: '';
+position: absolute;
+left: 5%;
+bottom: -30px;
+width: 90%;
+background: url(../../assets/silde/min_jelly/slide_bg_08-min.jpg) center no-repeat;
+height: 100px;
+background-size: 100% 40px;
+filter: blur(15px) grayscale(50%);
+z-index: -1 ;
+opacity: 0.7;
 }
 
-.mouse__wrap p {
-  font-size: 1.5vw;
-  line-height: 2;
-  font-weight: 300;
-}
-
-.mouse__wrap p:last-child {
-  font-size: 1.8vw;
-  font-weight: 500;
-}
-
-.mouse__wrap p span {
-  border-bottom: 0.05vw solid rgb(219, 73, 146);
-  color: rgb(219, 73, 146);
-}
-
-
-@media( max-width : 800px){
-    .mouse__wrap p {
-        padding: 0 20px;
-        font-size: 18px;
-        line-height: 1.5;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .mouse__wrap p:last-child {
-      font-size: 24px;
-      line-height: 1.5;
-      text-align: center;
-      word-break: keep-all;
-    }
+.mouse__img figcaption {
+position: absolute;
+left: 50%;
+top: 50%;
+font-size: 1vw;
+line-height: 1.6;
+transform: translate3d(-50%, -50% , 150px);
+padding: 1vw;
+white-space: nowrap;
+text-align: center;
+background: rgba(0,0,0,0.4);
 }
 
 .mouse__cursor {
+position: absolute;
+left: 0;
+top: 0;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background-color: #fff;
+z-index: 1000;
+pointer-events: none;
+user-select: none;
+mix-blend-mode: difference;
+}
+
+.mouse__info {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 10px;
-  height: 10px;
-  z-index: 9999;
-  border-radius: 50%;
-  background: rgba(255, 42, 219, 0.3);
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s, opactiy 0.2s;
-}
-
-.mouse__cursor2 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  z-index: 9998;
-  border-radius: 50%;
-  background: rgba(255, 156, 230, 0.5);
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.3s, opactiy 0.2s;
-}
-
-.mouse__cursor.active {
-  transform: scale(0);
-}
-.mouse__cursor2.active {
-  transform: scale(3);
-  background: rgba(255, 42, 219, 0.3);
-}
-
-.mouse__cursor.show {
-  transform: scale(0);
-}
-.mouse__cursor2.show {
-  transform: scale(3);
-  background: rgba(40, 169, 255, 0.3);
+  left: 20px;
+  bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  margin-bottom: 10px;
 }</code></pre>
                       </div>
                  </div>
@@ -385,46 +360,51 @@ body::after {
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-      const cursor = document.querySelector(".mouse__cursor");
-      const cursorBox = cursor.getBoundingClientRect();
 
-      document.querySelector(".mouse__wrap figure").addEventListener("mousemove",(e)=>{
-        //커서
-        gsap.to(cursor, {
-          duration : 0.5,
-          left : e.pageX - cursorBox.width/2,
-          top : e.pageY - cursorBox.height/2
-        });
-
-        //마우스 좌표값 
+      const mouseMove = (e) => {
+        //마우스 좌표값
         let mousePageX = e.pageX;
         let mousePageY = e.pageY;
 
-        //전체 가로값
-        // window.innerWidth //1920 : 브라우저 크기
-        // window.outerWidth //1920 : 브라우저 크기(스크롤바 포함)
-        // window.screen.width //1920 : 화면 크기
-        
-        //마우스 좌표 값 가운데로 초기화
-        //전체 길이/2 - 마우스 좌표값 == 0
+        //마우스 좌표 기준점을 가운데로 변경
         let centerPageX = window.innerWidth/2 - mousePageX;
         let centerPageY = window.innerHeight/2 - mousePageY;
 
-        //이미지 움직이기 
-        const imgMove = document.querySelector(".mouse__wrap figure img");
-        // imgMove.style.transform = "translate("+ centerPageX/20 +"px, " + centerPageY/20 + "px)";
+        //최소값은 -100 최대값은 100
+        let maxPageX =  Math.max(-100, Math.min(100,centerPageX));
+        let maxPageY = Math.max(-100, Math.min(100,centerPageY));
 
-        gsap.to(imgMove, {
-          duration : 0.3,
-          x : centerPageX/20,
-          y : centerPageY/20
-        });
 
+        //각도 줄이는 설정
+        let anglePageX = maxPageX * 0.3;
+        let anglePageY = maxPageY * 0.3;
+
+        //부드럽게 설정
+        let softPageX = 0 , softPageY = 0;
+        softPageX += (anglePageX - softPageX) * 0.4;
+        softPageY += (anglePageY - softPageY) * 0.4;
+
+        //이미지 움직이기
+        const imgMove = document.querySelector(".mouse__img");
+        imgMove.style.transform = "perspective(600px) rotateX("+ -softPageY +"deg) rotateY("+ -softPageX +"deg)"
+
+        //커서 
+        gsap.to(".mouse__cursor" , {duration : 0.3 , left: mousePageX -50 , top : mousePageY -50 })
+
+        //출력
         document.querySelector(".mousePageX").textContent = mousePageX;
         document.querySelector(".mousePageY").textContent = mousePageY;
         document.querySelector(".centerPageX").textContent = centerPageX;
         document.querySelector(".centerPageY").textContent = centerPageY;
-      });
+        document.querySelector(".maxPageX").textContent = maxPageX;
+        document.querySelector(".maxPageY").textContent = maxPageY;
+        document.querySelector(".anglePageX").textContent = Math.round(anglePageX) ;
+        document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+
+      };
+
+      window.addEventListener("mousemove", mouseMove);
+    
     </script>
   </body>
 </html>

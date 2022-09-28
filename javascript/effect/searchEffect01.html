@@ -318,7 +318,8 @@ searchBox.addEventListener("keyup", () => {
             searchList.forEach(el => {
                const cssName = el.dataset.name;
 
-               if(cssName.indexOf(searchWord)){
+            //if(cssName.indexOf(searchWord)){
+               if(cssName.search(searchWord)){
                     el.classList.add("hide")
                } else {
                     el.classList.remove("hide") //indexOf()값이 0이 되는 값만 hide를 지워줍니다.
