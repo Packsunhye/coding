@@ -548,14 +548,34 @@
       searchBox.addEventListener("keyup", ()=>{
         const searchWord = searchBox.value; 
         // console.log(searchWord);
-        findProperty(searchWord); // 매개변수로 만들기
+        findProperty(clickWord); // 매개변수로 만들기
       });
 
-      const searchList2 = document.querySelectorAll(".search__list span")        
+      
+        //클릭하기
+        //버튼을 클릭하면 설명이 나오게 만들어주기
+
+    //   const searchList2 = document.querySelectorAll(".search__list span")  
+
+    //   searchList2.forEach((e, i) => { //여러개니까 forEach 로 불러오기
+    //         // console.log(e)
+    //         e.addEventListener("click", () => {
+    //             const searchWord = e.innerText;
+    //             // console.log(e.value)
+    //             findProperty(searchWord);
+    //         });
+    //     })   
+
+        document.querySelectorAll(".search__list span").forEach(span => {
+            span.addEventListener("click", ()=>{
+                const clickWord = span.innerText;
+                findProperty(clickWord)
+            })
+        })
 
 
       //속성 찾기
-      function findProperty(searchData){ // 불러옴 searchWord -> searchData로 불러오기
+      function findProperty(searchData){ // 불러옴 clickWord -> searchData로 불러오기
         const targetData = cssProperty.find((data) => data.name === searchData);
 
         if(targetData == null ){
@@ -566,17 +586,10 @@
         searchDesc.textContent = targetData.desc;       
       }
 
-      //버튼을 클릭하면 설명이 나오게 만들어주기
 
-      searchList2.forEach((e, i) => { //여러개니까 forEach 로 불러오기
-            // console.log(e)
-            e.addEventListener("click", () => {
-                const searchWord = e.innerText;
-                // console.log(e.value)
-                findProperty(searchWord);
-            });
-        })
-      
+     
+
+      //클릭했을 때 스크롤 위로 올라가기
       
 
     </script>

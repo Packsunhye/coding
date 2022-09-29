@@ -1841,6 +1841,8 @@
             // console.log(result9)
 
             // 숙제
+            //b d f h k -> 짝수 수 만 나오게 하면 됨...
+
             const num = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
             const result10 = [...num].map(el => el)
             for(let result10 = 1; result10 <= num.length; result10 ++) {
@@ -1858,14 +1860,15 @@
             const result12 = num3.filter(function(e,i){
                 return i % 2 == 1 ? true : false;
             });
-            console.log(result12)
+            // console.log(result12)
 
             const num4 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
             const result13 = num4.splice(0,10,"b", "d","f","h","k");
             // console.log(num4)
 
-            //b d f h k -> 짝수 수 만 나오게 하면 됨...
 
+            // 숙제 e, f  -> 가운데만 출력할 수 있게 하기 (slice , splice 사용 금지) / 3가지
+            const num5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
                 
         }
     </script>
