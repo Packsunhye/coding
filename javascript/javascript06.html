@@ -1868,9 +1868,22 @@
 
 
             // 숙제 e, f  -> 가운데만 출력할 수 있게 하기 (slice , splice 사용 금지) / 3가지
+
             const num5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            num9.map((el,i)=>{
+                if(el == "e" || el == "f"){
+                    // console.log(num5[i])
+                }
+            })
+            const num6 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            for(let i = 4; i < 6; i++){
+            	  // console.log(num6[i])
+            }
+            const num7 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const result14 = num11.filter(el => el === "e" || el === "f")
+            // console.log(result14);
                 
         }
-    </script>
+    </script>   
 </body>
 </html>

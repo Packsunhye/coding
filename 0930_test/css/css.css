@@ -1,11 +1,12 @@
-@import url('https://webfontworld.github.io/naver/NanumGothic.css');
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 
 * {
     /* margin: 0;
     padding: 0; */
 }
 body {
-    font-family: 'NanumGothic';
+    font-family: 'nanumgothic';
     
     
 }
@@ -248,9 +249,16 @@ section {}
     font-size: 20px;
     font-weight: bold;
     margin-top: 5px;
+   
 }
 .use__up li:nth-child(1) {
     margin-right: 10px;
+}
+.use__up li a {
+    color: rgb(173, 173, 173);
+}
+.use__up li:nth-child(1) a {
+    color: #000;
 }
 
 .use__botm ul {
@@ -361,27 +369,97 @@ section {}
 /* footer */
 #footer {
     background-color: #263f5e;
+    padding-bottom: 150px;
 }
 .footer__top {
     justify-content: space-between;
     display: flex;
     padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #555f74;
 }
 .footer__top ul {
     display: flex;
 }
 .footer__top ul li {
     margin: 0;
-    padding: 0;
-    margin-right: 30px;
+    padding: 0 15px 0 15px;
+
+    border-right: 1px solid #555f74;
+}
+.footer__top ul li:nth-child(1){
+    padding-left: 0;
+}
+.footer__top ul li:last-child{
+    border-right: none;
 }
 .footer__top ul li a {
-    color: #b5b5b5;
+    color: #bcc4d5;
 }   
 
 .footer__side {
-    border: 1px solid #b5b5b5;
+    border: 1px solid #bcc4d5;
     padding: 8px 30px;
-    color: #fff;
+    color: #dee5f3;
     font-size: 14px;
+}
+.footer__botn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.stop {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+.botn__inner{
+    display: flex;
+}
+.botn__inner > img {
+    width: 90px;
+    height: 90px;
+    padding-right: 10px;
+}
+.botn__inner > h2 {
+    color: #8190a3;
+    font-size: 26px;
+}
+.botn__use {
+    margin-top: 20px;
+}
+.botn__use li {
+    color: #8190a3;
+    font-size: 14px;
+}
+.botn__logo {
+    margin-top: 20px;
+}
+.botn__logo .fbook img {
+    width: 32px;
+    height: 32px;
+}
+.botn__logo .twt img {
+    width: 32px;
+    height: 32px;
+}
+.botn__logo .ut img {
+    width: 32px;
+    height: 32px;
+}
+.botn__call {
+    border-left: 1px solid #555f74;
+    padding-left: 30px;
+}
+.botn__call > p {
+    color: #8190a3;
+    font-weight: 500;
+    text-align: left;
+    margin: 0;
+    margin-top: 20px;
+}
+.botn__call > h3 {
+    color: #fff;
+    font-size: 32px;
+    margin: 0;
 }
