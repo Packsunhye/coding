@@ -88,7 +88,7 @@
         .content__item__imgWrap {
             width: 100%;
             padding-bottom: 56.25%;
-            background: #000;
+            /* background: #000; */
             position: relative;
             overflow: hidden;
             z-index: -1;
@@ -201,156 +201,102 @@
 
         }
 
-        /* .split span {
+        .reveal > div, .reveal > span {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .split span.show {
-            opacity: 1;
-            transform: translateY(0);
-        } */
-
-        .style1.split span {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style1.split span.show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
-        .style2.split span {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
+        .reveal.show > div,.reveal.show > span  {
+            animation: opacity 1s linear forwards;
         }
-        .style2.split span.show {
-            opacity: 1;
-            transform: translateX(0);
+        .reveal {
+            position: relative;
+        }
+        .reveal::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
+            z-index: 1;
+        }
+        .reveal.reveal-TWO::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 1;
+            background-color: #b575fd;
         }
 
-        .style3.split span {
-            opacity: 0;
-            transform:  translateX(50px) translateY(50px) rotate(360deg);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style3.split span.show {
-            opacity: 1;
-            transform: translateX(0) translateY(0) rotate(0);
-        }
-
-        .style4.split span {
-           
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style4.split span.show {
-           
-            animation: wobble 1s 1 ease-in forwards;
+        /* 1개 */
+        .reveal.show::before{
+            animation: reveal 1s;
         }
         
+        .reveal.reveal-RTL.show::before{
+            animation: reveal-RTL 1s;
+        } 
 
-        @keyframes wobble {
-         0%     {transform: translate3d(0, 0, 0);  opacity: 0;}
-         15%    {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
-         30%    {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
-         45%    {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
-         60%    {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
-         75%    {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
-         100%   {transform: translate3d(0, 0, 0);  opacity: 1;}
+        .reveal.reveal-TTB.show::before{
+            animation: reveal-TTB 1s;
+        } 
+
+        .reveal.reveal-BTT.show::before{
+            animation: reveal-BTT 1s;
+        } 
+
+        /* 2개 */
+        .reveal.show::after{
+            animation: reveal 1s 0.3s;
+        }
+        .reveal.reveal-RTL.show::after{
+            animation: reveal-RTL 1s 0.3s;
+        }
+        .reveal.reveal-TTB.show::after{
+            animation: reveal-TTB 1s 0.3s;
+        } 
+
+        .reveal.reveal-BTT.show::after{
+            animation: reveal-BTT 1s 0.3s;
+        } 
+
+        @keyframes opacity {
+            0%      {opacity: 0;}
+            60%     {opacity: 0;}
+            70%     {opacity: 1;}
+            100%    {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%      {width: 0;      left: 0;}
+            50%     {width: 100%;   left: 0;}
+            80%     {width: 100%;   left: 0;}
+            100%    {width: 0;      left: 100%;}
         }
 
-        .style5.split span {
-           display: inline-block;
-           min-width: 1vw;
-        }
-        .style5.split span.show {
-            animation: jello 1s 1 ease-in forwards;
-        }
 
-        @keyframes jello {
-            0% ,11.1%, 100% {transform: translate3d(0, 0, 0);}
-            22.2% {transform: skewX(-12.5deg) skewY(-12.5deg);}
-            33.3% {transform: skewX(6.25deg) skewY(6.25deg);}
-            44.4% {transform: skewX(-3.125deg) skewY(-3.125deg);}
-            55.5% {transform: skewX(1.5625deg) skewY(1.5625deg);}
-            66.6% {transform: skewX(-0.78125deg) skewY(-0.78125deg);}
-            77.7% {transform: skewX(0.390625deg) skewY(0.390625deg);}
-            88.8% {transform: skewX(-0.1953125deg) skewY(-0.1953125deg);}
+        @keyframes reveal-RTL {
+            0%      {width: 0;      right: 0;       left: auto;}
+            50%     {width: 100%;   right: 0;       left: auto;}
+            80%     {width: 100%;   right: 0;       left: auto;}
+            100%    {width: 0;      right: 100%;    left: auto;}
         }
 
-    
-
-        /* .split.show span:nth-child(1){transition-delay: 100ms }
-        .split.show span:nth-child(2){transition-delay: 150ms }
-        .split.show span:nth-child(3){transition-delay: 200ms }
-        .split.show span:nth-child(4){transition-delay: 250ms }
-        .split.show span:nth-child(5){transition-delay: 300ms }
-        .split.show span:nth-child(6){transition-delay: 350ms }
-        .split.show span:nth-child(7){transition-delay:  400ms }
-        .split.show span:nth-child(8){transition-delay:  450ms }
-        .split.show span:nth-child(9){transition-delay:  500ms }
-        .split.show span:nth-child(10){transition-delay: 550ms}
-        .split.show span:nth-child(11){transition-delay: 600ms}
-        .split.show span:nth-child(12){transition-delay: 650ms}
-        .split.show span:nth-child(13){transition-delay: 700ms}
-        .split.show span:nth-child(14){transition-delay: 750ms}
-        .split.show span:nth-child(15){transition-delay: 800ms}
-        .split.show span:nth-child(16){transition-delay: 850ms}
-        .split.show span:nth-child(17){transition-delay: 900ms}
-        .split.show span:nth-child(18){transition-delay: 950ms}
-        .split.show span:nth-child(19){transition-delay: 1000ms}
-        .split.show span:nth-child(20){transition-delay: 1050ms}
-
-        .split.show span:nth-child(21){transition-delay: 1100ms }
-        .split.show span:nth-child(22){transition-delay: 1150ms }
-        .split.show span:nth-child(23){transition-delay: 1200ms }
-        .split.show span:nth-child(24){transition-delay: 1250ms }
-        .split.show span:nth-child(25){transition-delay: 1300ms }
-        .split.show span:nth-child(26){transition-delay: 1350ms }
-        .split.show span:nth-child(27){transition-delay: 1400ms }
-        .split.show span:nth-child(28){transition-delay: 1450ms }
-        .split.show span:nth-child(29){transition-delay: 1500ms }
-        .split.show span:nth-child(30){transition-delay: 1550ms }
-
-        .split.show span:nth-child(31){transition-delay: 1600ms }
-        .split.show span:nth-child(32){transition-delay: 1650ms }
-        .split.show span:nth-child(33){transition-delay: 1700ms }
-        .split.show span:nth-child(34){transition-delay: 1750ms }
-        .split.show span:nth-child(35){transition-delay: 1800ms }
-        .split.show span:nth-child(36){transition-delay: 1850ms }
-        .split.show span:nth-child(37){transition-delay: 1900ms }
-        .split.show span:nth-child(38){transition-delay: 1950ms }
-        .split.show span:nth-child(39){transition-delay: 2000ms }
-        .split.show span:nth-child(40){transition-delay: 2050ms }
-
-        .split.show span:nth-child(41){transition-delay: 2100ms }
-        .split.show span:nth-child(42){transition-delay: 2150ms }
-        .split.show span:nth-child(43){transition-delay: 2200ms }
-        .split.show span:nth-child(44){transition-delay: 2250ms }
-        .split.show span:nth-child(45){transition-delay: 2300ms }
-        .split.show span:nth-child(46){transition-delay: 2350ms }
-        .split.show span:nth-child(47){transition-delay: 2400ms }
-        .split.show span:nth-child(48){transition-delay: 2450ms }
-        .split.show span:nth-child(49){transition-delay: 2500ms }
-        .split.show span:nth-child(50){transition-delay: 2550ms }
-
-        .split.show span:nth-child(51){transition-delay: 2600ms }
-        .split.show span:nth-child(52){transition-delay: 2650ms }
-        .split.show span:nth-child(53){transition-delay: 2700ms }
-        .split.show span:nth-child(54){transition-delay: 2750ms }
-        .split.show span:nth-child(55){transition-delay: 2800ms } */
-        
+        @keyframes reveal-TTB {
+            0%      {width: 0;      height: 0;      top: 0;}
+            50%     {width: 100%;   height: 100%;   top: 0;}
+            80%     {width: 100%;   height: 100%;   top: 0;}
+            100%    {width: 0;      height: 0;      top: 100%;}
+        }
+        @keyframes reveal-BTT {
+            0%      {width: 0;      height: 0;      bottom: 0;      top:auto; }
+            50%     {width: 100%;   height: 100%;   bottom: 0;      top:auto; }
+            80%     {width: 100%;   height: 100%;   bottom: 0;      top:auto; }
+            100%    {width: 0;      height: 0;      bottom: 100%;   top:auto; }
+        }
 
     </style>
    
@@ -358,16 +304,16 @@
 
   <body class="img08">
     <header id="header" class="arir">
-      <h1 class="Nix"><a href="parallaxEffect.html">Javascript parallax Effect 06</a></h1>
-      <p>패럴렉스 이펙트 - 텍스트 효과 </p>
+      <h1 class="Nix"><a href="parallaxEffect.html">Javascript parallax Effect 07</a></h1>
+      <p>패럴렉스 이펙트 - 리빌 효과 </p>
       <ul>
         <li><a href="parallaxEffect01.html">1</a></li>
         <li><a href="parallaxEffect02.html">2</a></li>
         <li><a href="parallaxEffect03.html">3</a></li>
         <li><a href="parallaxEffect04.html">4</a></li>
         <li><a href="parallaxEffect05.html">5</a></li>
-        <li class="active"><a href="parallaxEffect06.html">6</a></li>
-        <li><a href="parallaxEffect07.html">7</a></li>
+        <li><a href="parallaxEffect06.html">6</a></li>
+        <li class="active"><a href="parallaxEffect07.html">7</a></li>
       </ul>
     </header>
     
@@ -376,90 +322,90 @@
             <section id="section1" class="content__item">
                 <span class="content__item__num">01</span>
                 <h2 class="content__item__title">section1</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style1"> 인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. </p>
+                <p class="content__item__desc reveal"><span>인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. </span></p>
             </section>
             <!-- //section1 -->
 
             <section id="section2" class="content__item">
                 <span class="content__item__num">02</span>
                 <h2 class="content__item__title">section2</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style2"> 사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 </p>
+                <p class="content__item__desc reveal reveal-RTL" data-delay="500"><span>사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 </span></p>
             </section>
             <!-- //section2 -->
 
             <section id="section3" class="content__item">
                 <span class="content__item__num">03</span>
                 <h2 class="content__item__title">section3</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TTB">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style3"> 성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다 </p>
+                <p class="content__item__desc reveal reveal-TTB" data-delay="500"> <span>성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다</span> </p>
             </section>
             <!-- //section3 -->
 
             <section id="section4" class="content__item">
                 <span class="content__item__num">04</span>
                 <h2 class="content__item__title">section4</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-BTT" data-delay="1500">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style4"> 삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 </p>
+                <p class="content__item__desc reveal reveal-BTT"> <span>삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 </span></p>
             </section>
             <!-- //section4 -->
 
             <section id="section5" class="content__item">
                 <span class="content__item__num">05</span>
                 <h2 class="content__item__title">section5</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TWO">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split style5"> 우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. </p>
+                <p class="content__item__desc reveal reveal-TWO"> <span>우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. </span></p>
             </section>
             <!-- //section5 -->
 
             <section id="section6" class="content__item">
                 <span class="content__item__num">06</span>
                 <h2 class="content__item__title">section6</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split"> 반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. </p>
+                <p class="content__item__desc reveal reveal-TWO reveal-RTL"> <span>반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. </span></p>
             </section>
             <!-- //section6 -->
 
             <section id="section7" class="content__item">
                 <span class="content__item__num">07</span>
                 <h2 class="content__item__title">section7</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split"> 나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  </p>
+                <p class="content__item__desc reveal reveal-TWO reveal-TTB"> <span>나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  </span></p>
             </section>
             <!-- //section7 -->
 
             <section id="section8" class="content__item">
                 <span class="content__item__num">08</span>
                 <h2 class="content__item__title">section8</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split"> 인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. </p>
+                <p class="content__item__desc reveal reveal-TWO reveal-BTT"> <span>인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. </span></p>
             </section>
             <!-- //section8 -->
 
             <section id="section9" class="content__item">
                 <span class="content__item__num">09</span>
                 <h2 class="content__item__title">section9</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TWO">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc split"> 네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다. </p>
+                <p class="content__item__desc reveal reveal-TWO"> <span>네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다.</span> </p>
             </section>
             <!-- //section9 -->
         </div>
@@ -936,64 +882,30 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        //글씨 쪼개기 
-        // let text = document.querySelector("#section1 .content__item__desc");
-        // let soplitText = text.innerText;
-        // let soplitWrap = soplitText.split(' ').join('</span><span>')
-
-        // text.innerHTML = soplitWrap = "<span>" + soplitWrap + "</span>"
-
-        let descAll = document.querySelectorAll("#contents .content__item__desc.split");
-
-        //글씨 쪼개기(다중)
-        descAll.forEach( desc => {
-            let splitText = desc.innerText;
-            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-
-            desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
-            desc.setAttribute("aria-label",splitText);
-
-        }); 
-
-        //스크롤
+        // reveal 클래스 자식요소에 글씨만 있다면, 가상으로 span 태그를 만들어서 넣어주세요 !
         function scroll(){
-            let scrollTop = window.scrollY 
-            document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
 
-            //css 클래스 추가(생고생)
-            // document.querySelectorAll(".content__item").forEach(item => {
-            //     if(scrollTop >= item.offsetTop ){
-            //         item.querySelector(".split").classList.add("show")
-            //     }
-            // })
-
-            // document.querySelectorAll(".content__item").forEach(item => {
-            //     if(scrollTop >= item.offsetTop){
-            //         item.querySelectorAll(".split span").forEach((span, index)=> {
-            //             span.classList.add("show")
-            //             span.style.transitionDelay = `${index * 100}ms`
-            //         })
-            //     }
-            // })
-
-            document.querySelectorAll(".content__item").forEach(item => {
-                if(scrollTop >= item.offsetTop){
-                    item.querySelectorAll(".split span").forEach((span, index)=> {
-                        setTimeout(()=>{
-                            span.classList.add("show");
-                        }, 50 * index );
-                    })
+            let scrollTop = window.scrollY;
+            const reveal = document.querySelectorAll(".reveal");
+            
+            reveal.forEach(el => {
+                let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+                let revealDelay = el.dataset.delay;
+                // if(scrollTop > revealOffset - window.innerHeight){
+                //     el.classList.add("show");
+                // }
+                if(scrollTop >= revealOffset - window.innerHeight){
+                    if(revealDelay == undefined){
+                        el.classList.add("show");
+                    } else {
+                        setTimeout(() => {
+                            el.classList.add("show");
+                        }, revealDelay)
+                    }
                 }
-            })
-
-
-            requestAnimationFrame(scroll)
-
-            //첫번째 span --> 0.01s
-            //두번째 span --> 0.02s
-            //. . . (index)
-            
-            
+            });
+            document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+            requestAnimationFrame(scroll);
         }
         scroll();
 
