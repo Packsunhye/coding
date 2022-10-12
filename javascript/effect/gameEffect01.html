@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../assets/css/bg.css">
+    <link rel="stylesheet" href="../assets/css/game.css">
+    <link rel="stylesheet" href="../assets/css/music.css">
+</head>
+<body>
+    <header id="header">
+        <h1>MANYONG GAME EFFECT01</h1>
+        <div class="time"></div>
+    </header>
+    <!-- header -->
+    <main id="main">
+        <div class="cusor">
+            <img src="../assets/img/cursor.cluster.png" alt="">
+        </div>   
+        <div class="icon__box">
+            <div class="icon1">
+                <img src="../assets/img/grin.png" alt="">
+                <span>초록색</span>
+            </div>
+            <div class="icon2">
+                <img src="../assets/img/folder.block.png" alt="">
+                <span>하얀색</span>
+            </div>
+            <div class="icon3">
+                <img src="../assets/img/folder.red.png" alt="">
+                <span>빨간색</span>
+            </div>
+            <div class="icon4">
+                <img src="../assets/img/folder.yellow.png" alt="">
+                <span>노란색</span>
+            </div>
+            <div class="icon5">
+                <img src="../assets/img/page.blue.png" alt="">
+                <span>파란색</span>
+            </div>
+            <div class="icon6">
+                <img src="../assets/img/icon.pic.png" alt="">
+                <span>꽃</span>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+    <footer id="footer">
+        <div class="agent"></div>
+    </footer>
+    <!-- footer -->
+
+    <!-- 뮤직 플레이어 -->
+    <div class="music__wrap">
+        <div class="music__inner">
+            <div class="music__header">
+                <div>*</div>
+                <h2>Music Player</h2>
+                <div>*</div>
+            </div>
+            <div class="music__contents">
+                <div class="music__view">
+                    <div class="img">
+                        <img src="../assets/img/artwork.pic.png" alt="">
+                    </div>
+                    <div class="title">
+                        <h3> 가수 - 제목 </h3>
+                        <p>youtube music</p>
+                    </div>
+                </div>
+                <div class="music__control">
+                    <div class="progress">
+                        <div class="bar">
+                            <audio id="main-audio" src="../assets/music/music_audio01.mp3"></audio>
+                        </div>
+                        <div class="timer">
+                            <span class="current">0:00</span>
+                            <span class="duraition">4:00</span>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                        <i title="이전곡 재생" class="prev" id="control-prev"></i>
+                        <i title="재생" class="play" id="control-play"></i>
+                        <i title="다음곡 재생" class="next" id="control-next"></i>
+                        <i title="재생 목록" class="list" id="control-list"></i>
+                        <!-- <i title="정지" class="stop" id="control-stop"></i> -->
+                        <!-- <i title="한곡 반복" class="repeat_one"></i>-->
+                        <!-- <i title="랜덤 반복" class="shuffle"></i> -->
+                    </div>
+                </div>
+            </div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>뮤직 리스트</h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li> -->
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script src="../assets/js/game.js"></script>
+    <script>
+        $( ".icon1" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.grine.png")
+            },
+        });
+        $( ".icon2" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.white.png")
+            },
+        });
+        $( ".icon3" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.red.png")
+            },
+        });
+        $( ".icon4" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.cluster.png")
+            },
+        });
+        $( ".icon5" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.blue.png")
+            },
+        });
+        $( ".icon6" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.white.png")
+            },
+        });
+        $( ".music__wrap" ).draggable({
+            drag: function(){
+                $(".cusor img").attr("src","../assets/img/cursor.white.png")
+            },
+        });
+
+        const cursor = document.querySelector(".cusor");
+
+        window.addEventListener("mousemove",(e) => {
+          gsap.to(cursor, {duration: 0.15, left:e.pageX-20, top:e.pageY});
+
+        });
+
+      
+        function printTime(){
+            const clock = document.querySelector(".time");
+            const now = new Date();
+            const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초"
+            //getFullYear - 년도만 갖고올 수 있다.getMonth - 0부터 시작이라 +1 해줘야지 제대로 된 월이 나온다.
+            
+            clock.textContent = nowTime;
+            setTimeout("printTime()",1000);
+        }
+        function preintAgent(){
+            const agent = document.querySelector(".agent")
+            const os = navigator.userAgent.toLocaleLowerCase();
+            
+            // agent.textContent = os;
+
+            if(os.indexOf("window")>=0){
+                agent.textContent = "현재 윈도우를 사용하고 있습니다. 화면 크기는 넓이 : "+ screen.width + " 높이 : "+screen.height+ " 입니다.";
+                document.querySelector("body").classList.add("window");
+            }else if(os.indexOf("macintosh")>=0){
+                agent.textContent = "현재 맥을 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window");
+            }else if(os.indexOf("iphone")>=0){
+                agent.textContent = "현재 아이폰을 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window");
+            }else if(os.indexOf("android")>=0){
+                agent.textContent = "현재 안드로이드를 사용하고 있습니다.";
+                document.querySelector("body").classList.add("window"); 
+            }
+        }
+        window.onload = function(){
+            printTime();
+            preintAgent();
+        }
+
+       
+    </script>
+</body>
+</html>

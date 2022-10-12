@@ -325,7 +325,7 @@
                 <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal"><span>인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. </span></p>
+                <p class="content__item__desc split reveal"><span>인간은 패배하도록 만들어진 것은 아니다. 인간은 파괴될 지언정 패배할 수는 없다. </span></p>
             </section>
             <!-- //section1 -->
 
@@ -335,7 +335,7 @@
                 <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-RTL" data-delay="500"><span>사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 </span></p>
+                <p class="content__item__desc split reveal reveal-RTL" data-delay="500"><span>사막이 아름다운 것은, 어디엔가 샘을 숨기고 있기 때문이야 </span></p>
             </section>
             <!-- //section2 -->
 
@@ -345,7 +345,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TTB">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TTB" data-delay="500"> <span>성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다</span> </p>
+                <p class="content__item__desc split reveal reveal-TTB" data-delay="500"> <span>성공 그 자체에 파멸의 불씨가 들어 있을지도 모른다</span> </p>
             </section>
             <!-- //section3 -->
 
@@ -355,7 +355,7 @@
                 <figure class="content__item__imgWrap reveal reveal-BTT" data-delay="1500">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-BTT"> <span>삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 </span></p>
+                <p class="content__item__desc split reveal reveal-BTT"> <span>삶에 후회를 남기지말고, 사랑하는 데 이유를 달지 마세요 </span></p>
             </section>
             <!-- //section4 -->
 
@@ -365,7 +365,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TWO">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TWO"> <span>우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. </span></p>
+                <p class="content__item__desc split reveal reveal-TWO"> <span>우리는 인생의 날들을 늘릴수는 없지만, 그 날들에 생기를 불어 넣을 수는 있다. </span></p>
             </section>
             <!-- //section5 -->
 
@@ -375,7 +375,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TWO reveal-RTL"> <span>반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. </span></p>
+                <p class="content__item__desc split reveal reveal-TWO reveal-RTL"> <span>반복되는 하루는 단 한번도 없다. 그러므로 너는 아름답다. </span></p>
             </section>
             <!-- //section6 -->
 
@@ -385,7 +385,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TWO reveal-TTB"> <span>나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  </span></p>
+                <p class="content__item__desc split reveal reveal-TWO reveal-TTB"> <span>나는 신념에 가득 찬 자들을 신뢰하지 않습니다. 나는 오히려 의심에 가득 찬 자들을 신뢰합니다.  </span></p>
             </section>
             <!-- //section7 -->
 
@@ -395,7 +395,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TWO reveal-BTT"> <span>인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. </span></p>
+                <p class="content__item__desc split reveal reveal-TWO reveal-BTT"> <span>인생에 지나가가는 사람들에게 상처받지 말자 그들은 어차피 인생에서 지나가는 사람들일 뿐이다. </span></p>
             </section>
             <!-- //section8 -->
 
@@ -405,7 +405,7 @@
                 <figure class="content__item__imgWrap reveal reveal-TWO">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc reveal reveal-TWO"> <span>네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다.</span> </p>
+                <p class="content__item__desc split reveal reveal-TWO"> <span>네 장미꽃을 그렇게 소중하게 만든 것은 그 꽃을 위해 네가 소비한 시간이란다.</span> </p>
             </section>
             <!-- //section9 -->
         </div>
@@ -882,6 +882,19 @@ document.querySelectorAll("#parallax__nav li a").forEach( li => {
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
+
+        let descAll = document.querySelectorAll("#contents .content__item__desc.split");
+
+        //글씨 쪼개기(다중)
+        descAll.forEach( desc => {
+            let splitText = desc.innerText;
+            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+
+            desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+            desc.setAttribute("aria-label",splitText);
+
+        }); 
+
         // reveal 클래스 자식요소에 글씨만 있다면, 가상으로 span 태그를 만들어서 넣어주세요 !
         function scroll(){
 

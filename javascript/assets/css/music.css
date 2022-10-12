@@ -1,0 +1,211 @@
+.music__wrap {}
+.music__inner {
+    width: 600px;
+    /* height: 280px; */
+    background-color: #000;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+
+    padding: 10px;
+    padding-top: 5px;
+}
+.music__header {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 0 10px;
+}
+.music__header  h2 {
+    font-size: 14px;
+}
+.music__contents {
+    background-color: #c4c4c4;
+    width: 100%;
+    /* height: 230px; */
+
+}
+.music__view {
+    display: flex;
+    padding: 20px;
+}
+.music__view .img {
+    width: 30%;
+}
+.music__view .title {
+    width: 70%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.music__view .title h3 {
+    margin-bottom: 5px;
+    font-size: 40px;
+    line-height: 1.2;
+}
+.music__view .title p {
+    font-size: 21px;
+    color: rgb(255, 21, 157);
+}
+.music__view .img img {
+    width: 100%;
+}
+
+/* music__control */
+.music__control {
+    width: 100%;
+    height: 100px;
+    /* background-color: #000; */
+
+    padding: 20px;
+    padding-top: 0;
+}
+.music__control .progress {
+    width: 100%;
+    height: 6px;
+    background-color: #000;
+    border-radius: 5px;
+}
+.music__control .progress .bar {
+    width: 80%;
+    height: inherit;
+    border-radius: 5px;
+    background-color: rgb(255, 21, 157);
+}
+.music__control .progress .timer {
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.music__control .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.music__control .control .repeat {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -200px 0;
+}
+.music__control .control .repeat_one {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -250px 0;
+}
+.music__control .control .shuffle {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -300px 0;
+}
+.music__control .control .prev {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  0 0;
+}
+.music__control .control .next {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -150px 0;
+}
+.music__control .control div {
+    display: flex;
+}
+.music__control .control .play {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -50px 0;
+}
+.music__control .control .stop {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -100px 0;
+}
+.music__control .control .list {
+    background: url(../img/PLAY.svg);
+    width: 50px;
+    height: 50px;
+    background-position:  -350px 0;
+}
+
+/* music__footer */
+.music__footer {
+    background-color: #c4c4c4;
+    
+}
+.music__list {
+    
+    padding: 20px;
+}
+.music__list h3 {
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.music__list h3 .list {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: -15px;
+    margin-bottom: 7px;
+
+    background: url(../img/PLAY.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    background-position:  -450px 0;
+}
+.music__list ul {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+.music__list li {
+    border-bottom: 1px solid #000;
+    list-style: none;
+    position: relative;
+    padding: 10px 0 5px;
+}
+.music__list strong {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 4px;
+    color: rgb(255, 21, 157);
+}
+.music__list em {
+   font-style: normal;
+}
+
+.music__list > span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.music__list ul::-webkit-scrollbar {
+    width: 13px; /*스크롤바의 너비*/
+}
+
+.music__list ul::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 21, 157); /*스크롤바의 색상*/
+    background-clip: padding-box;
+    border: 4px solid transparent;
+    border-radius: 5px;
+}
