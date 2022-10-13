@@ -150,11 +150,11 @@
     
 }
 .music__list {
-    display: none;
+    /* display: none; */
     padding: 20px;
 }
 .music__list.show {
-    display: block;
+    /* display: block; */
     padding: 20px;
 }
 .music__list h3 {
