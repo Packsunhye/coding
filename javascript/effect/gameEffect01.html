@@ -95,7 +95,7 @@
             </div>
             <div class="music__footer">
                 <div class="music__list">
-                    <h3><span class="list"></span>뮤직 리스트</h3>
+                    <h3><span class="list"></span>뮤직 리스트 <span class="close"></span></h3>
                     <ul>
                         <!-- <li>
                             <strong>제목</strong>
@@ -153,20 +153,33 @@
         const cursor = document.querySelector(".cusor");
 
         window.addEventListener("mousemove",(e) => {
-          gsap.to(cursor, {duration: 0.15, left:e.pageX-20, top:e.pageY});
+          gsap.to(cursor, {duration: 0.15, left:e.pageX, top:e.pageY});
 
         });
 
+        function printTime() {
+                const clock = document.querySelector(".time");
+                const now = new Date();
+                let hours = now.getHours();
+                const minutes = now.getMinutes();
+                const seconds = now.getSeconds();
+                const ampm = hours >= 12 ? "pm" : "am";
+                hours = hours % 12 || 12;
+                // const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + ":" + now.getMinutes() + ()":"now.()getMnow.getS now.()getSeconds();
+                const nowTime = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일 ${hours < 10 ? `0${hours}` : `${hours}`}:${minutes < 10 ? `0${minutes}` : `${minutes}`}:${seconds < 10 ? `0${seconds}` : `${seconds}`}${ampm}`;
+                clock.innerText = nowTime;
+                setTimeout("printTime()", 1000);
+            }
       
-        function printTime(){
-            const clock = document.querySelector(".time");
-            const now = new Date();
-            const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초"
-            //getFullYear - 년도만 갖고올 수 있다.getMonth - 0부터 시작이라 +1 해줘야지 제대로 된 월이 나온다.
+        // function printTime(){
+        //     const clock = document.querySelector(".time");
+        //     const now = new Date();
+        //     const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초"
+        //     //getFullYear - 년도만 갖고올 수 있다.getMonth - 0부터 시작이라 +1 해줘야지 제대로 된 월이 나온다.
             
-            clock.textContent = nowTime;
-            setTimeout("printTime()",1000);
-        }
+        //     clock.textContent = nowTime;
+        //     setTimeout("printTime()",1000);
+        // }
         function preintAgent(){
             const agent = document.querySelector(".agent")
             const os = navigator.userAgent.toLocaleLowerCase();

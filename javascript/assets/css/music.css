@@ -150,7 +150,11 @@
     
 }
 .music__list {
-    
+    display: none;
+    padding: 20px;
+}
+.music__list.show {
+    display: block;
     padding: 20px;
 }
 .music__list h3 {
@@ -170,7 +174,19 @@
     background-size: cover;
     width: 30px;
     height: 30px;
-    background-position:  -450px 0;
+    background-position:  -480px 0;
+}
+.music__list h3 .close {
+    display: inline-block;
+    margin-left: 380px;
+    vertical-align: -15px;
+    margin-bottom: 7px;
+
+    background: url(../img/PLAY.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    background-position:  -510px 0;
 }
 .music__list ul {
     max-height: 400px;
@@ -187,14 +203,16 @@
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 4px;
-    color: rgb(255, 21, 157);
+    /* color: rgb(255, 21, 157); */
 }
 .music__list em {
    font-style: normal;
+   color: rgb(112, 112, 112);
 }
 
-.music__list > span {
+.music__list li > span {
     position: absolute;
+    /* float: right; */
     right: 0;
     top: 10px;
 }
@@ -208,4 +226,11 @@
     background-clip: padding-box;
     border: 4px solid transparent;
     border-radius: 5px;
+}
+.music__list li.playing strong{
+    color: rgb(255, 21, 157);
+}
+
+.music__list li.playing span{
+    color: rgb(255, 21, 157);
 }
