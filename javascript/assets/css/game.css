@@ -24,12 +24,12 @@ body {
 }
 #header h1 {
     font-size: 20px;
-    color: #fff;
+    color: #a261ff;
     padding: 5px 0;
     font-weight: normal;
 }
 #header .time {
-    color: #fff;
+    color: #46d5ee;
 }
 
 #footer {
@@ -43,7 +43,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 5px 10px;
-    color: #fff;
+    color: #46d5ee;
     text-align: center;
 }
 #footer .agent {

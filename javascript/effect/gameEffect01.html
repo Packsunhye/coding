@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/game.css">
     <link rel="stylesheet" href="../assets/css/music.css">
+    <style>
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform : translate(-50%, -50%);
+
+            width: 1800px;
+            height: 1000px;
+            z-index: 3;
+        }
+        .icon_iframe.show {
+            display: block;
+        }
+        .icon_iframe {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -16,6 +34,11 @@
         <div class="time"></div>
     </header>
     <!-- header -->
+    
+    <div class="icon_iframe">
+    <iframe src="https://github1s.com/Packsunhye/coding/blob/main/javascript/effect/gameEffect01.html"></iframe>
+    </div>
+
     <main id="main">
         <div class="cusor">
             <img src="../assets/img/cursor.cluster.png" alt="">
@@ -23,7 +46,7 @@
         <div class="icon__box">
             <div class="icon1">
                 <img src="../assets/img/grin.png" alt="">
-                <span>초록색</span>
+                <span>노래</span>
             </div>
             <div class="icon2">
                 <img src="../assets/img/folder.block.png" alt="">
@@ -43,7 +66,7 @@
             </div>
             <div class="icon6">
                 <img src="../assets/img/icon.pic.png" alt="">
-                <span>꽃</span>
+                <span>소스보기</span>
             </div>
         </div>
     </main>
@@ -57,9 +80,9 @@
     <div class="music__wrap">
         <div class="music__inner">
             <div class="music__header">
-                <div>*</div>
+                <div>ଳ</div>
                 <h2>Music Player</h2>
-                <div>*</div>
+                <div>ଳ</div>
             </div>
             <div class="music__contents">
                 <div class="music__view">
@@ -148,6 +171,32 @@
             drag: function(){
                 $(".cusor img").attr("src","../assets/img/cursor.white.png")
             },
+        });
+
+        // 팝업 열기
+        const WbTn = document.querySelector(".icon6");
+        const MbTn = document.querySelector(".icon1");
+        const iconFrame = document.querySelector(".icon_iframe");
+        const musicW = document.querySelector(".music__wrap");
+
+        WbTn.addEventListener("click", ()=>{
+            iconFrame.classList.add("show")
+        })
+        MbTn.addEventListener("click", ()=>{
+            musicW.classList.add("show")
+        })
+
+
+        // 외부영역 클릭 시 팝업 닫기
+        $(document).mouseup(function (e){
+        	var LayerPopup = $(".icon_iframe");
+        	var MusicPopup = $(".music__wrap");
+        	if(LayerPopup.has(e.target).length === 0){
+        		LayerPopup.removeClass("show");
+        	}
+            if(MusicPopup.has(e.target).length === 0){
+        		MusicPopup.removeClass("show");
+        	}
         });
 
         const cursor = document.querySelector(".cusor");

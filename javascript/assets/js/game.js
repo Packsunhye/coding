@@ -233,10 +233,10 @@ musicNextBtn.addEventListener("click", ()=>{
 
 // 뮤직 리스트
 musicListBtn.addEventListener("click", ()=> {
-    musicList.style.display = "block"
+    musicList.classList.add("show")
 })
 musicCloseBtn.addEventListener("click", ()=> {
-    musicList.style.display = "none"
+    musicList.classList.remove("show")
 })
 
 // 뮤직 리스트 구현하기

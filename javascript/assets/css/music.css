@@ -1,4 +1,9 @@
-.music__wrap {}
+.music__wrap {
+    display: none;
+}
+.music__wrap.show {
+    display: block;
+}
 .music__inner {
     width: 600px;
     /* height: 280px; */
@@ -24,7 +29,7 @@
     font-size: 14px;
 }
 .music__contents {
-    background-color: #c4c4c4;
+    background-color: #000;
     width: 100%;
     /* height: 230px; */
 
@@ -43,6 +48,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: #fff;
 }
 .music__view .title h3 {
     margin-bottom: 5px;
@@ -51,7 +57,7 @@
 }
 .music__view .title p {
     font-size: 21px;
-    color: rgb(255, 21, 157);
+    color: rgb(70 204 255);
 }
 .music__view .img img {
     width: 100%;
@@ -69,57 +75,60 @@
 .music__control .progress {
     width: 100%;
     height: 6px;
-    background-color: #000;
+    background-color: #fff;
     border-radius: 5px;
 }
 .music__control .progress .bar {
     width: 80%;
     height: inherit;
     border-radius: 5px;
-    background-color: rgb(255, 21, 157);
+    background-color: rgb(70 204 255);
 }
 .music__control .progress .timer {
     margin-top: 3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #fff;
 }
 
 
 .music__control .control {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
+    padding: 0 80px;
+    justify-content: space-around;
     margin-top: 30px;
 }
 .music__control .control .repeat {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  -200px 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -205px 0;
 }
 .music__control .control .repeat_one {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  -250px 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -55px 0;
 }
 .music__control .control .shuffle {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  -300px 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -355px 0;
 }
 .music__control .control .prev {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  0 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -120px 0;
 }
 .music__control .control .next {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 25px;
     background-position:  -150px 0;
 }
 .music__control .control div {
@@ -127,41 +136,42 @@
 }
 .music__control .control .play {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  -50px 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -30px 0;
 }
 .music__control .control .stop {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  -100px 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -275px 0;
 }
 .music__control .control .list {
     background: url(../img/PLAY.svg);
-    width: 50px;
-    height: 50px;
-    background-position:  -350px 0;
+    width: 30px;
+    height: 25px;
+    background-position:  -450px 0;
 }
 
 /* music__footer */
 .music__footer {
-    background-color: #c4c4c4;
+    background-color: #000;
     
 }
 .music__list {
-    /* display: none; */
+    display: none;
     padding: 20px;
 }
 .music__list.show {
-    /* display: block; */
+    display: block; 
     padding: 20px;
 }
 .music__list h3 {
-    border-top: 2px solid #000;
+    border-top: 2px solid #fff;
     padding-top: 10px;
     font-size: 20px;
     font-weight: bold;
+    color: #fff;
     
 }
 .music__list h3 .list {
@@ -174,7 +184,7 @@
     background-size: cover;
     width: 30px;
     height: 30px;
-    background-position:  -480px 0;
+    background-position:  -560px 0;
 }
 .music__list h3 .close {
     display: inline-block;
@@ -186,14 +196,14 @@
     background-size: cover;
     width: 30px;
     height: 30px;
-    background-position:  -510px 0;
+    background-position:  -640px 0;
 }
 .music__list ul {
     max-height: 400px;
     overflow-y: scroll;
 }
 .music__list li {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #fff;
     list-style: none;
     position: relative;
     padding: 10px 0 5px;
@@ -203,7 +213,8 @@
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 4px;
-    /* color: rgb(255, 21, 157); */
+    color: #fff;
+    /* color: rgb(70 204 255); */
 }
 .music__list em {
    font-style: normal;
@@ -215,6 +226,7 @@
     /* float: right; */
     right: 0;
     top: 10px;
+    color: rgb(112, 112, 112);
 }
 
 .music__list ul::-webkit-scrollbar {
@@ -222,15 +234,15 @@
 }
 
 .music__list ul::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 21, 157); /*스크롤바의 색상*/
+    background-color: rgb(70 204 255); /*스크롤바의 색상*/
     background-clip: padding-box;
     border: 4px solid transparent;
     border-radius: 5px;
 }
 .music__list li.playing strong{
-    color: rgb(255, 21, 157);
+    color: rgb(70 204 255);
 }
 
 .music__list li.playing span{
-    color: rgb(255, 21, 157);
+    color: rgb(70 204 255);
 }
