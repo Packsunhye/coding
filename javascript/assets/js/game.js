@@ -1,4 +1,4 @@
-const allMusic = [
+    const allMusic = [
     {
         name : "01. Good In Goodbye",
         artist : "Madison Beer",
