@@ -44,13 +44,11 @@
     <!-- header -->
     
     <div class="icon_iframe">
-    <!-- <iframe src="https://github1s.com/Packsunhye/coding/blob/main/javascript/effect/gameEffect01.html"></iframe> -->
+    <iframe src="https://github1s.com/Packsunhye/coding/blob/main/javascript/effect/gameEffect01.html"></iframe>
     </div>
 
     <div class="game__frame">
         <div class="game__wrap">
-            
-
             <div class="game__inner">
                 <div class="game__audio"></div>
                 <div class="game__title">
@@ -59,7 +57,7 @@
                     <div>ଳ</div>
                 </div>
                 <p class="desc">
-                    1분동안 알고계시는 많은 동물들을 입력하세요 :3
+                    1분동안 아래에 있는 많은 동물들을 기억하고 입력해주세요 :3
                 </p>
                 <div class="search__audio">
                     <span class="play">
@@ -88,7 +86,7 @@
                             </defs>
                             </svg>                            
                     </span>
-                    <audio id="audio" src="../assets/music/fail.m4a" loop="loop"></audio>
+                    <audio id="audio" src="../assets/music/pixel.mp3" loop="loop"></audio>
                 </div>
                 <div class="time">
                     <span>1:00</span>
@@ -261,14 +259,19 @@
         // 팝업 열기
         const WbTn = document.querySelector(".icon6");
         const MbTn = document.querySelector(".icon1");
+        const GbTn = document.querySelector(".icon2");
         const iconFrame = document.querySelector(".icon_iframe");
         const musicW = document.querySelector(".music__wrap");
+        const gameDr = document.querySelector(".game__frame");
 
         WbTn.addEventListener("click", ()=>{
             iconFrame.classList.add("show")
         })
         MbTn.addEventListener("click", ()=>{
             musicW.classList.add("show")
+        })
+        GbTn.addEventListener("click", ()=>{
+            gameDr.classList.add("show")
         })
 
         const audio = document.getElementById('main-audio');
@@ -282,11 +285,15 @@
         $(document).mouseup(function (e){
         	var LayerPopup = $(".icon_iframe");
         	var MusicPopup = $(".music__wrap");
+        	var GamePopup = $(".game__frame");
         	if(LayerPopup.has(e.target).length === 0){
         		LayerPopup.removeClass("show");
         	}
             if(MusicPopup.has(e.target).length === 0){  
         		MusicPopup.removeClass("show");
+        	}
+            if(GamePopup.has(e.target).length === 0){  
+        		GamePopup.removeClass("show");
         	}
         });
 

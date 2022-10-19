@@ -41,12 +41,34 @@ const cssProperty = [
     { num: 40, name: "부엉이"},
     { num: 41, name: "올빼미"},
     { num: 42, name: "까치"},
+    { num: 43, name: "북극곰"},
+    { num: 44, name: "바다표범"},
+    { num: 45, name: "물개"},
+    { num: 46, name: "펭귄"},
+    { num: 47, name: "물범"},
+    { num: 48, name: "족제비"},
+    { num: 49, name: "라쿤"},
+    { num: 50, name: "참새"},
+    { num: 51, name: "비둘기"},
+    { num: 52, name: "까마귀"},
+    { num: 53, name: "앵무새"},
+    { num: 54, name: "백조"},
+    { num: 55, name: "잉어"},
+    { num: 56, name: "붕어"},
+    { num: 57, name: "흑등고래"},
+    { num: 58, name: "향유고래"},
+    { num: 59, name: "흰긴수염고래"},
+    { num: 60, name: "불가사리"},
+    { num: 61, name: "꽃게"},
+    { num: 62, name: "칠게"},
+    { num: 63, name: "해삼"},
+    { num: 67, name: "조개"},
 ];
 
 const searchTime = document.querySelector(".time span");
 const searchList = document.querySelector(".search__list");
-const searchAnswers = document.querySelector(".search__answers");
-const searchMissAnswers = document.querySelector(".search__missAnswers");
+const searchAnswers = document.querySelector(".search__anwers");
+const searchMissAnswers = document.querySelector(".search__MissAnwers");
 const searchStart = document.querySelector(".search__box .start");
 const searchInput = document.querySelector("#search");
 const searchAudio = document.querySelector("#audio");
@@ -141,6 +163,7 @@ cssProperty.forEach(item => {
 // 오답 보여주기
 function missAnswers(){
 searchMissAnswers.style.display = "block";
+searchAnswers.style.display = "none";
 cssProperty.forEach(item => {
     let answer = item.name.trim().toLocaleLowerCase();
     if(answers[answer] == false){
@@ -185,7 +208,7 @@ searchAudio.pause();
 // 메시지 출력
 searchResultWrap.classList.add("show");
 let point = Math.round(score / cssProperty.length * 100);
-searchResult.innerHTML = `게임이 종료되었습니다.<br>${cssProperty.length}개 중 ${score}개를 맞혔습니다.<br>점수는 ${point}점입니다.`;
+searchResult.innerHTML = `게임이 종료되었습니다.${cssProperty.length}개 중 ${score}개를 맞혔습니다. 점수는 ${point}점입니다.`;
 }
 // 다시 시작하기
 function restart(){

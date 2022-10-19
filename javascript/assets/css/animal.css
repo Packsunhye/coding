@@ -2,7 +2,12 @@ li {
     list-style: none;
 }
 
-.game__wrap {}
+.game__frame {
+    display: none;
+}
+.game__frame.show{
+    display: block;
+}
 .game__inner {
     padding: 20px;
     width: 800px;
@@ -75,7 +80,7 @@ li {
 .game__inner .search__MissAnwers {
     text-align: center;
     margin-top: 10px;
-    height: 140px;
+    height: 135px;
     overflow-y: scroll;
     border-top: 2px dashed #fff;
     padding-bottom: 20px;
@@ -185,7 +190,7 @@ li {
 .search__result .result{
     padding: 30px;
     text-align: center;
-    font-size: 32px;
+    font-size: 18px;
     color: #fff;
 }
 .search__result .restart {
@@ -193,8 +198,8 @@ li {
     background-color: #a261ff;
     display: block;
     margin: 0 auto;
-    font-size: 24px;
-    cursor: pointerz    ;
-    padding: 10px;
-    margin-bottom: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px;
+    margin-bottom: 20px;
 }
